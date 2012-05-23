@@ -1,4 +1,4 @@
-web-app
+Web-app
 =======
 
-Developing a web application.
+Developing a fully functional web application.
