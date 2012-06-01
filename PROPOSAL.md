@@ -22,8 +22,7 @@ I Have Plans is an application that helps to connect people. A scheduler by day,
 
 - Geolocation
 - CakePHP
-- Backbone.js
-- Node.js (if applicable)
+-Google Maps API
 
 ## Similar Applications
 
