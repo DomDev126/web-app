@@ -4,6 +4,13 @@ require_once 'includes/db.php';
 require_once 'includes/users.php';
 require_once 'includes/requests.php';
 
+if (!user_is_signed_in()) {
+	header('Location: index.php');
+	exit;
+}
+
+
+
 $user_id = $_SESSION['user-id'];
 
 if (isset($_SESSION['confirm_event_id'])) {
