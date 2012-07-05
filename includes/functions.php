@@ -44,46 +44,48 @@ function check_schedule($db, $user_id) {
 	$todays_events = array();
 	$week_array = array();
 
-	foreach ($final_results as $user_events){
 		
-		if ($user_events['event_date'] == $current_date) {
-			$inner_array_current = array();
-			array_push($inner_array_current, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id'] );
-			$todays_events[0] =  $inner_array_current;
-			$week_array[0] = $todays_events[0];
+	if(isset($final_results)) {
+		foreach ($final_results as $user_events){
 			
-		}
-		if ($user_events['event_date'] == $day1) {
-			$day1_array = array();
-			array_push($day1_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
-			$todays_events[1] =  $day1_array;
-			$week_array[1] = $todays_events[1];
-		}
-		if ($user_events['event_date'] == $day2) {
-			$day2_array = array();
-			array_push($day2_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
-			$todays_events[2] =  $day2_array;
-			$week_array[2] = $todays_events[2];
-			
-		}
-		if ($user_events['event_date'] == $day3) {
-			$day3_array = array();
-			array_push($day3_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
-			$todays_events[3] =  $day3_array;
-			$week_array[3] = $todays_events[3];
-			
-		}
-		if ($user_events['event_date'] == $day4) {
-			$day4_array = array();
-			array_push($day4_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
-			$todays_events[4] =  $day4_array;
-			$week_array[4] = $todays_events[4];
-			
-		}
-	
+			if ($user_events['event_date'] == $current_date) {
+				$inner_array_current = array();
+				array_push($inner_array_current, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id'] );
+				$todays_events[0] =  $inner_array_current;
+				$week_array[0] = $todays_events[0];
+				
+			}
+			if ($user_events['event_date'] == $day1) {
+				$day1_array = array();
+				array_push($day1_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
+				$todays_events[1] =  $day1_array;
+				$week_array[1] = $todays_events[1];
+			}
+			if ($user_events['event_date'] == $day2) {
+				$day2_array = array();
+				array_push($day2_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
+				$todays_events[2] =  $day2_array;
+				$week_array[2] = $todays_events[2];
+				
+			}
+			if ($user_events['event_date'] == $day3) {
+				$day3_array = array();
+				array_push($day3_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
+				$todays_events[3] =  $day3_array;
+				$week_array[3] = $todays_events[3];
+				
+			}
+			if ($user_events['event_date'] == $day4) {
+				$day4_array = array();
+				array_push($day4_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
+				$todays_events[4] =  $day4_array;
+				$week_array[4] = $todays_events[4];
+				
+			}
+		
 
+		}
 	}
-
 	return($week_array);
 
 	
@@ -98,6 +100,7 @@ function create_table ($start, $interval, $event_array) {
 
 
 	$counter = 0;
+	$count_this = 0;
 
 
 	for ($i = $start; $i <24; $i++){
@@ -117,10 +120,15 @@ function create_table ($start, $interval, $event_array) {
 
       		$event_array_object = new ArrayObject($event_array);
 
+      		
 
       		for ($k = 0; $k < 5; $k++) {
+
       			
       			if($event_array_object->offsetExists($k)) {
+
+
+
 
 	      			$day_event_start = strtotime($event_array[$k][1]);
 	      			$day_event_end = strtotime($event_array[$k][2]);
@@ -128,28 +136,32 @@ function create_table ($start, $interval, $event_array) {
 	      			if ($time_seconds >= $day_event_start && $time_seconds < $day_event_end) {
 
 
+	      				
+      					echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].$count_this.'</a></td>'); 
 
 
 
-      					echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
-
-
-
-
-
+					
 
       				
       				} else {
 
       				echo('<td class="eventTable"></td>'); 
+
+	
+      				
       				}
 
 	      		} else {
 
       				echo('<td class="eventTable"></td>'); 
+
+
       			}
 
       		}
+
+      	$count_this++;
 
        		echo ('</tr>');	
 	      
