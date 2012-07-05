@@ -714,6 +714,9 @@ thead tr th:nth-child(2n+1) {
 
 	text-align: center;
 
+	text-shadow: 0 1px 0 #aaa,
+				0 -1px 0 #888;
+
 }
 
 #panel-location + div {
@@ -724,6 +727,10 @@ thead tr th:nth-child(2n+1) {
 	left: 30%;
 	font-size: 20px;
 	width: 100%;
+
+	text-shadow: 0 1px 0 #aaa,
+				0 -1px 0 #888;
+
 }
 .second {
 	line-height: 2;

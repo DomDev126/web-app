@@ -6,7 +6,13 @@ require_once 'includes/requests.php';
 
 $user_id = $_SESSION['user-id'];
 
-$event_id = $_SESSION['confirm_event_id'];
+if (isset($_SESSION['confirm_event_id'])) {
+	$event_id = $_SESSION['confirm_event_id'];
+}
+
+if (!isset($_SESSION['confirm_event_id'])) {
+	$event_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+}
 
 $event_info = get_event_loc_title ($db, $event_id);
 
@@ -78,9 +84,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					</p>
 					</div>	
 				</div>
-				<div class="go-button event-go">
-					<button type="submit">Confirm</button>
-				</div>
+				<?php if(isset($_SESSION['confirm_event_id'])) {
+
+					echo ('<div class="go-button event-go"><button type="submit">Confirm</button></div>');
+
+				}else {
+
+				echo ('<div class="go-button event-go"><a href="calendar.php">Go Back</a></div>');
+
+			} ?>
+				
 			</form>
 		</div>
 	<div>

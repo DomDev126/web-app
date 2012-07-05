@@ -22,7 +22,7 @@ function check_schedule($db, $user_id) {
 
 		$event_id = $event_ids[0];
 
-		$sql = $db->prepare('SELECT event_date, event_from, event_to, event_title FROM events WHERE id = :event_id AND event_date IN (:current_date, :day1, :day2, :day3, :day4) ');
+		$sql = $db->prepare('SELECT event_date, event_from, event_to, event_title, id FROM events WHERE id = :event_id AND event_date IN (:current_date, :day1, :day2, :day3, :day4) ');
 		$sql->bindValue(':event_id', $event_id, PDO::PARAM_INT);
 		$sql->bindValue(':current_date', $current_date, PDO::PARAM_STR);
 		$sql->bindValue(':day1', $day1, PDO::PARAM_STR);
@@ -48,34 +48,34 @@ function check_schedule($db, $user_id) {
 		
 		if ($user_events['event_date'] == $current_date) {
 			$inner_array_current = array();
-			array_push($inner_array_current, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date']);
+			array_push($inner_array_current, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id'] );
 			$todays_events[0] =  $inner_array_current;
 			$week_array[0] = $todays_events[0];
 			
 		}
 		if ($user_events['event_date'] == $day1) {
 			$day1_array = array();
-			array_push($day1_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date']);
+			array_push($day1_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
 			$todays_events[1] =  $day1_array;
 			$week_array[1] = $todays_events[1];
 		}
 		if ($user_events['event_date'] == $day2) {
 			$day2_array = array();
-			array_push($day2_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date']);
+			array_push($day2_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
 			$todays_events[2] =  $day2_array;
 			$week_array[2] = $todays_events[2];
 			
 		}
 		if ($user_events['event_date'] == $day3) {
 			$day3_array = array();
-			array_push($day3_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date']);
+			array_push($day3_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
 			$todays_events[3] =  $day3_array;
 			$week_array[3] = $todays_events[3];
 			
 		}
 		if ($user_events['event_date'] == $day4) {
 			$day4_array = array();
-			array_push($day4_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date']);
+			array_push($day4_array, $user_events['event_title'], $user_events['event_from'],$user_events['event_to'],$user_events['event_date'], $user_events['id']);
 			$todays_events[4] =  $day4_array;
 			$week_array[4] = $todays_events[4];
 			
@@ -131,7 +131,7 @@ function create_table ($start, $interval, $event_array) {
 
 
 
-      					echo('<td class="eventTable eventTime"><a href="#">'.$event_array[$k][0].'</a></td>'); 
+      					echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
 
 
 

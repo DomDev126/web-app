@@ -98,16 +98,12 @@ $event_array = check_schedule($db,$user_id);
 									$_SESSION['confirm_event_id'] = $notify['event_id'];
 
 				    				echo '<li><a href="event.php">You have an event to confirm</a></li>';
-
-									$notified[] = $notify;
 											
 				    			}
 
-				    		} if(empty($notified) && (isset($_SESSION['event_added']))) {
+				    		}  
 
-				    			echo '<li>No events to confirm</li>';
-
-				    		} ?>
+				    		?>
 				    		
 				    	<ul>
 					</div>
