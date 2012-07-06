@@ -24,7 +24,6 @@ $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_STRING);
 
 
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	if (empty($title)) {
@@ -120,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							</div>
 							<div class="form-input">
 									<label for="who-with">With who?: </label>
-									<input id="who-with" name="who-with">
+									<input id="who-with" name="who-with" >
 								</div>
 								<div class="form-input">
 									<label for="location">Location: </label>

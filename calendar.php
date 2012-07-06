@@ -92,12 +92,10 @@ $event_array = check_schedule($db,$user_id);
 							$notified = array();
 
 							foreach ($notifications as $notify) {
-
+							
 				    			if($notify['confirmed'] == 0 ){
 
-									$_SESSION['confirm_event_id'] = $notify['event_id'];
-
-				    				echo '<li><a href="event.php">You have an event to confirm</a></li>';
+				    				echo '<li><a href="event.php?id='.$notify[1].'">You have an event to confirm</a></li>';
 											
 				    			}
 

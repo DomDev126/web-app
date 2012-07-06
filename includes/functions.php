@@ -9,7 +9,7 @@ function check_schedule($db, $user_id) {
 	$day4  = date("m/d/Y", mktime(0, 0, 0, date("m")  , date("d")+4, date("Y")));
 
 	
-	$sql = $db->prepare(' SELECT event_id FROM user_events WHERE user_id = :user_id ');
+	$sql = $db->prepare(' SELECT event_id FROM user_events WHERE user_id = :user_id AND confirmed = 1 ');
 	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 	$sql->execute();
 	$results = $sql->fetchAll();

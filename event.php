@@ -12,14 +12,8 @@ if (!user_is_signed_in()) {
 
 
 $user_id = $_SESSION['user-id'];
+$event_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
 
-if (isset($_SESSION['confirm_event_id'])) {
-	$event_id = $_SESSION['confirm_event_id'];
-}
-
-if (!isset($_SESSION['confirm_event_id'])) {
-	$event_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
-}
 
 $event_info = get_event_loc_title ($db, $event_id);
 
@@ -39,9 +33,13 @@ $date_string = $day.' '.$day_month.' at '. $event_date[0][0];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	update_user_confirmation($db, $user_id, $event_id);
+	$event_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+
+
+	$ok = update_user_confirmation($db, $user_id, $event_id);
 
 	$_SESSION['confirmed'] = true;
+
 
 	header('Location: calendar.php');
 	exit;
@@ -58,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 	<div class="container">
 		<div class="login-box">
-			<form id="login" method="post" action="event.php">
+			<form id="login" method="post" action="<?php echo('event.php?id='.$event_id.'');?> ">
 				<h2>Plan</h2>
 				<div class="panel">
 					<div class="panel-info">
@@ -91,15 +89,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					</p>
 					</div>	
 				</div>
-				<?php if(isset($_SESSION['confirm_event_id'])) {
+				<?php 
 
-					echo ('<div class="go-button event-go"><button type="submit">Confirm</button></div>');
+					$notifications = check_notification_confirmation($db, $event_id, $user_id);
 
-				}else {
 
-				echo ('<div class="go-button event-go"><a href="calendar.php">Go Back</a></div>');
+						
+					if($notifications){
+						
+		    			if($notifications[0][0] == 0){
 
-			} ?>
+		    				echo ('<div class="go-button event-go"><button type="submit">Confirm</button></div>');
+									
+		    			} else {
+		    				echo ('<div class="go-button event-go"><a href="calendar.php">Go Back</a></div>');
+
+		    			}  
+		    		}else {
+
+		    			echo ('<div class="go-button event-go"><a href="calendar.php">Go Back</a></div>');
+		    		}
+
+				 ?>
 				
 			</form>
 		</div>

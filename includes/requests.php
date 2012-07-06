@@ -140,6 +140,9 @@ function make_user_event($db, $user_id, $event_id, $confirmed) {
 
 function update_user_confirmation($db, $user_id, $event_id) {
 
+
+	var_dump($user_id);
+	var_dump($event_id);
 	$sql = $db->prepare(' UPDATE user_events SET confirmed = 1 WHERE event_id = :event_id AND user_id = :user_id');
 	
 	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
@@ -151,6 +154,21 @@ function check_notification($db, $user_id) {
 
 	$sql = $db->prepare('SELECT confirmed, event_id FROM user_events WHERE user_id = :user_id');
 
+	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+	$sql->execute();
+	$results = $sql->fetchALL();
+
+
+	return $results;
+
+}
+
+
+function check_notification_confirmation($db, $event_id, $user_id) {
+
+	$sql = $db->prepare('SELECT confirmed FROM user_events WHERE event_id = :event_id AND user_id = :user_id LIMIT 1 ');
+
+	$sql->bindValue(':event_id', $event_id, PDO::PARAM_INT);
 	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 	$sql->execute();
 	$results = $sql->fetchALL();
