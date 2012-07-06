@@ -1,5 +1,0 @@
-#Setup environment variables for connecting to the database
-
-SetEnv DB_USER root
-SetEnv DB_PASS 
-SetEnv DATA_SOURCE mysql:host=localhost;dbname=haveplans
