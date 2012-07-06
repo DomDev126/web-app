@@ -100,7 +100,7 @@ function create_table ($start, $interval, $event_array) {
 
 
 	$counter = 0;
-	$count_this = 0;
+	$displayed_event_array = array();
 
 
 	for ($i = $start; $i <24; $i++){
@@ -118,50 +118,10 @@ function create_table ($start, $interval, $event_array) {
     		echo ('<tr>'); 
       		echo ('<td class="tableTime">'.$full_time.'</td>');
 
-      		$event_array_object = new ArrayObject($event_array);
 
-      		
+      		$displayed_event_array = display_schedule_events($time_seconds, $event_array, $displayed_event_array);
 
-      		for ($k = 0; $k < 5; $k++) {
-
-      			
-      			if($event_array_object->offsetExists($k)) {
-
-
-
-
-	      			$day_event_start = strtotime($event_array[$k][1]);
-	      			$day_event_end = strtotime($event_array[$k][2]);
 	      			
-	      			if ($time_seconds >= $day_event_start && $time_seconds < $day_event_end) {
-
-
-	      				
-      					echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].$count_this.'</a></td>'); 
-
-
-
-					
-
-      				
-      				} else {
-
-      				echo('<td class="eventTable"></td>'); 
-
-	
-      				
-      				}
-
-	      		} else {
-
-      				echo('<td class="eventTable"></td>'); 
-
-
-      			}
-
-      		}
-
-      	$count_this++;
 
        		echo ('</tr>');	
 	      
@@ -174,4 +134,55 @@ function create_table ($start, $interval, $event_array) {
 }
 
 
+
+function display_schedule_events($time_seconds, $event_array, $displayed_event_array) {
+
+	$event_array_object = new ArrayObject($event_array);
+
+	for ($k = 0; $k < 5; $k++) {
+
+      			
+      			if($event_array_object->offsetExists($k)) {
+
+	      			$day_event_start = strtotime($event_array[$k][1]);
+	      			$day_event_end = strtotime($event_array[$k][2]);
+
+	      			if ($time_seconds >= $day_event_start && $time_seconds < $day_event_end) {
+
+
+
+	      				if(!isset($displayed_event_array[$k])) {
+							
+							$displayed_event_array[$k] = true;
+      						
+      						echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
+
+      					} else {
+
+      						echo('<td class="eventTable eventTime"></td>'); 
+
+      					}
+
+
+      				} else {
+
+
+      					echo('<td class="eventTable"></td>'); 
+
+      				}
+
+
+
+	      		} else {
+
+      				echo('<td class="eventTable"></td>'); 
+
+
+      			}
+  		
+
+      		}
+
+return $displayed_event_array;
+}
 
