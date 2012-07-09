@@ -66,12 +66,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<meta charset="UTF-8">
 	<title>Add Event &middot I Have Plans</title>
 	
-	 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places" type="text/javascript"></script>
-	 <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places" type="text/javascript"></script>
+	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
 	 
-	 <script type="text/javascript" src="js/jquery.timepicker.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
+	<script type="text/javascript" src="js/jquery.timepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
 
 	<link type="text/css" href="css/custom-theme/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
 	<link href="css/general.css" rel="stylesheet">
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				<div class="contentBody">
 					<div class="eventBody">
 						<div class="top-box">
-							<form method="post" action="add-event.php">
+							<form method="post" action="add-event.php" id="plan-form">
 								<div class="form-input">
 									<label for="title">Title: </label>
 									<input id="title" name="title">
@@ -168,7 +168,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$('#end').timepicker();
 		  });
 		</script>
-
-
+<script src="js/plan-validator.js"></script>
 <body>
 </html>

@@ -2,6 +2,7 @@
 
 require_once 'includes/db.php';
 require_once 'includes/users.php';
+require_once 'includes/requests.php';
 
 $errors = array();
 
@@ -11,6 +12,13 @@ $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	
+	$name_check = friend_check($db, $username);
+
+	if($name_check) {
+		$errors['user-exists'] = true;
+	}
+
 	if (empty($username)) {
 	$errors['username'] = true;
 	}
@@ -38,14 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 	<div class="container">
+
 		<div class="login-box">
 			<form id="login" method="post" action="sign-up.php">
+
 				<h2>Sign Up</h2>
 				<div class="panel">
 					<div class="panel-info">
 						<label for="username">Username:</label>
-						<input id="username" name="username">
+						<input id="username" name="username">	
 						<strong class="user-available" data-status="unchecked">Available</strong>
+
 					</div>
 				</div>
 				<div class="panel">
@@ -62,11 +73,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>
 				<div class="go-button">
 					<button type="submit">Go</button>
+					<?php if(isset($errors['user-exists'])) { echo ('That user already exists.');} ?>
 				</div>
 			</form>
 		</div>
 	<div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="js/js-validator.js"></script>
+<script src="js/user-validation.js"></script>
+
 </body>
 </html>

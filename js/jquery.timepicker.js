@@ -12,8 +12,8 @@ requires jQuery 1.6+
 	var _ONE_DAY = 86400;
 	var _defaults =	{
 		className: null,
-		minTime: null,
-		maxTime: null,
+		minTime: '6:00am',
+		maxTime: '11:30pm',
 		durationTime: null,
 		step: 30,
 		showDuration: false,

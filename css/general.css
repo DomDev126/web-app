@@ -385,7 +385,7 @@ form {
 }
 
 .top-box {
-
+	position: relative;
 	text-align: left;
 	width: 625px;
 
@@ -533,6 +533,31 @@ border-radius: 10px;
 
 }
 
+.good {
+
+	background-color: #ddf7d5;
+}
+
+.error {
+
+	background-color:#f87963;
+}
+
+
+.bad-date:after{
+	display:inline-block;
+	position: absolute;
+	content:'Please double check you start and end time';
+	top: 80px;
+	right: -285px;
+
+	font-size: 13px;
+	color: #fff;
+
+
+}
+
+
 
 /********* CALENDAR **************/
 
@@ -609,6 +634,11 @@ thead tr th:nth-child(2n+1) {
 	margin-top: 20px;
 	padding: 0.25em ;
 	background-color: #fff;
+
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+
 }
 
 .notificationsList {
