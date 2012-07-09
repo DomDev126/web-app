@@ -88,6 +88,7 @@ $event_array = check_schedule($db,$user_id);
 							unset($_SESSION['event_added']);  
 							unset($_SESSION['confirmed']);
 
+							//check to see if there are any events to confirm
 				    		$notifications = check_notification($db, $user_id);
 							$notified = array();
 

@@ -104,8 +104,9 @@ function create_table ($start, $interval, $event_array) {
 
 
 	for ($i = $start; $i <24; $i++){
-  	
+  	//loop for hour
 	    for ($j = 0; $j <=$interval ; $j+=$interval) {
+	    	// loop for minutes
 
 			$change_to_pm = ($counter > $change_time - (60 / $interval)) ? true : false;
 			$pm_or_am = $change_to_pm ? 'pm' : 'am';
@@ -118,10 +119,8 @@ function create_table ($start, $interval, $event_array) {
     		echo ('<tr>'); 
       		echo ('<td class="tableTime">'.$full_time.'</td>');
 
-
+      		//function to display the event in the table cell
       		$displayed_event_array = display_schedule_events($time_seconds, $event_array, $displayed_event_array);
-
-	      			
 
        		echo ('</tr>');	
 	      
@@ -132,7 +131,6 @@ function create_table ($start, $interval, $event_array) {
 	}
 
 }
-
 
 
 function display_schedule_events($time_seconds, $event_array, $displayed_event_array) {
@@ -147,12 +145,14 @@ function display_schedule_events($time_seconds, $event_array, $displayed_event_a
 	      			$day_event_start = strtotime($event_array[$k][1]);
 	      			$day_event_end = strtotime($event_array[$k][2]);
 
+	      			//compare the start and end to decide whether to keep the event cells going
 	      			if ($time_seconds >= $day_event_start && $time_seconds < $day_event_end) {
 
 
 
 	      				if(!isset($displayed_event_array[$k])) {
-							
+							//display_event_array =  true to make sure it only prints the first time
+
 							$displayed_event_array[$k] = true;
       						
       						echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
@@ -183,6 +183,6 @@ function display_schedule_events($time_seconds, $event_array, $displayed_event_a
 
       		}
 
-return $displayed_event_array;
+return $displayed_event_array; // pass the array back to update array in create_table
 }
 

@@ -286,6 +286,8 @@ form h2 {
 
 	width: 150px;
 	right: -150px;
+
+
 }
 
 
@@ -593,6 +595,8 @@ thead tr th:nth-child(2n+1) {
 	border-left: 1px solid #000;
 	border-right: 1px solid #000;
 
+	text-align: left;
+
 
 }
 
@@ -712,6 +716,7 @@ thead tr th:nth-child(2n+1) {
 	margin: 0;
 
 
+	font-size: 0.8em;
 	text-align: center;
 
 	text-shadow: 0 1px 0 #aaa,
@@ -746,7 +751,6 @@ thead tr th:nth-child(2n+1) {
 	width: 45px;
 	top: 25px;
 
-
 }
 
 
@@ -754,19 +758,19 @@ thead tr th:nth-child(2n+1) {
 #panel-time:before {
 
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
-	background-position: -160px 1px;
+	background-position: -160px 4px;
 }
 
 #panel-location:before {
 
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
-	background-position: -160px -44px;
+	background-position: -160px -39px;
 }
 
 #panel-friends:before {
 
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
-	background-position: -155px -88px;
+	background-position: -155px -83px;
 }
 
 
