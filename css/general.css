@@ -56,6 +56,22 @@ h2 {font-size: 2.25em;}
 
 
 
+.sign-out {
+	margin: 0 ;
+	padding:3px 5px 3px 0;
+	width: 100%;
+
+	background-color: #000;
+	text-align: right;
+
+}
+
+.sign-out a {
+
+	color:#fff;
+}
+
+
 /********** HEADER ***************/
 
 .header-container {
@@ -308,9 +324,9 @@ form h2 {
 }
 .contentHead h1{
 	margin:0;
-	color:#fff;
+	color:#000;
 
-	text-shadow: 0 1px 2px #222;
+	text-shadow: 0 1px 1px #fff;
 
 }
 
@@ -695,6 +711,12 @@ thead tr th:nth-child(2n+1) {
 
 }
 
+#addFriend em {
+	display: block;
+	font-size: 0.5em;
+
+	color: red;
+}
 #addEmail {
 	width: 250px;
 	height: 30px;
@@ -734,7 +756,29 @@ thead tr th:nth-child(2n+1) {
 	color: #f33;
 }
 
+.friendHolder{
+	position: relative;
 
+	margin: 10px;
+
+	background-color: #d9d9d9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #d9d9d9, #c0c0c0); /* Chrome 10+, Saf5.1+, iOS 5+ */ background-image:    -moz-linear-gradient(top, #d9d9d9, #c0c0c0); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #d9d9d9, #c0c0c0); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
+	color: #000;
+
+	border:1px solid #efefef;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.delete {
+	display:inline-block;
+	color:#fff;
+
+
+}
 
 
 

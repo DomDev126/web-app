@@ -120,7 +120,7 @@ function create_table ($start, $interval, $event_array) {
       		echo ('<td class="tableTime">'.$full_time.'</td>');
 
       		//function to display the event in the table cell
-      		$displayed_event_array = display_schedule_events($time_seconds, $event_array, $displayed_event_array);
+      		$displayed_event_array = display_schedule_events($time_seconds, $interval, $event_array, $displayed_event_array);
 
        		echo ('</tr>');	
 	      
@@ -133,7 +133,7 @@ function create_table ($start, $interval, $event_array) {
 }
 
 
-function display_schedule_events($time_seconds, $event_array, $displayed_event_array) {
+function display_schedule_events($time_seconds, $interval, $event_array, $displayed_event_array) {
 
 	$event_array_object = new ArrayObject($event_array);
 
@@ -144,6 +144,7 @@ function display_schedule_events($time_seconds, $event_array, $displayed_event_a
 
 	      			$day_event_start = strtotime($event_array[$k][1]);
 	      			$day_event_end = strtotime($event_array[$k][2]);
+	      			$total_cells = (($day_event_end - $day_event_start) / 60) / $interval;
 
 	      			//compare the start and end to decide whether to keep the event cells going
 	      			if ($time_seconds >= $day_event_start && $time_seconds < $day_event_end) {
@@ -155,22 +156,15 @@ function display_schedule_events($time_seconds, $event_array, $displayed_event_a
 
 							$displayed_event_array[$k] = true;
       						
-      						echo('<td class="eventTable eventTime"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
+      						echo('<td class="eventTable eventTime" rowspan="' . $total_cells . '"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
 
-      					} else {
-
-      						echo('<td class="eventTable eventTime"></td>'); 
-
-      					}
-
+      					} 
 
       				} else {
-
 
       					echo('<td class="eventTable"></td>'); 
 
       				}
-
 
 
 	      		} else {
@@ -180,7 +174,6 @@ function display_schedule_events($time_seconds, $event_array, $displayed_event_a
 
       			}
   		
-
       		}
 
 return $displayed_event_array; // pass the array back to update array in create_table

@@ -1,20 +1,33 @@
 $(document).ready(function () {
 
 
+	$('#title').on('change', function (ev) {
+		var eventTitle = $('#title').val();
+
+		if(eventTitle.length < 3 || eventTitle.length > 100) {
+			$('#title').addClass('error');
+
+
+			}else {
+				$('#title').removeClass('error');
+			}
+
+	});
+
+
+
 	$('#datepicker').on('change', function (ev) {
 		var chosenDate = $('#datepicker').val();
 
 		var currentDate = new Date(getCurrentDate());
 		var eventDate = new Date(chosenDate);
 
-		if(currentDate >= eventDate){
+		if(currentDate > eventDate){
 			$('#datepicker').addClass('error');
 
 		}else{
 			$('#datepicker').removeClass('error');
 		}
-
-		
 
 
 	});
@@ -24,6 +37,7 @@ $(document).ready(function () {
 	$('#end').on('change', function (ev) {
 		var startTime = $('#start').val();
 			endTime = $('#end').val(),
+			formOptions = $(".form-options"),
 			convertedStartTime = startTime.match('[a-z]{2}'),
 			convertedEndTime = endTime.match('[a-z]{2}'),
 			startResult = parseInt(startTime),
@@ -38,7 +52,10 @@ $(document).ready(function () {
 		}
 
 		if(startResult >= endResult) {
-			$(".form-options").toggleClass('bad-date');
+			formOptions.addClass('bad-date');
+
+		}else{
+			formOptions.removeClass('bad-date');
 
 		}
 
@@ -48,10 +65,9 @@ $(document).ready(function () {
 	
 
 	function getCurrentDate(){
-	   var d;
+	   var d = new Date();
 	   var s = "";
-	   
-	   d = new Date();
+
 	   if(d.getMonth() + 1 <10) {
 
 	  	 s += "0"+(d.getMonth() + 1) + "/";

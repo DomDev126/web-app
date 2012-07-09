@@ -78,10 +78,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </head>
 <body>
-	<?php if (user_is_signed_in()) : ?>
-	<a href="sign-out.php">Sign Out</a>
-	<?php endif; ?>
+	
 	<div class="container">	
+		<?php if (user_is_signed_in()) : ?>
+	<p class="sign-out"><a href="sign-out.php">Sign Out</a></p>
+	<?php endif; ?>
 		<div class="header-container">
 			<header class="mainHead">
 				<figure>
@@ -108,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							<form method="post" action="add-event.php" id="plan-form">
 								<div class="form-input">
 									<label for="title">Title: </label>
-									<input id="title" name="title">
+									<input id="title" name="title" placeholder="Coffee Break">
 								</div>
 
 								<label for="time">Date/Title: </label>
@@ -119,11 +120,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							</div>
 							<div class="form-input">
 									<label for="who-with">With who?: </label>
-									<input id="who-with" name="who-with" >
+									<input id="who-with" name="who-with" placeholder="Will (Optional)">
 								</div>
 								<div class="form-input">
 									<label for="location">Location: </label>
-									<input id="location" name="location">
+									<input id="location" name="location" placeholder="45 Lowertown Drive">
 									<p class="loc-notice">Already know the address? If not search below.</p>
 								</div>
 							</div>
@@ -159,8 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	stepSecond: 10
 		});
 	});
-	</script>
-	<script>
+
 		  $(function() {
 			$('#start').timepicker();
 		  });

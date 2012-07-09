@@ -25,11 +25,10 @@ $event_array = check_schedule($db,$user_id);
 	<link href="css/general.css" rel="stylesheet">
 </head>
 <body>
-	<?php if (user_is_signed_in()) : ?>
-	<a href="sign-out.php">Sign Out</a>
-	<?php endif; ?>
 	<div class="container">	
-		
+		<p class="sign-out"><?php if (user_is_signed_in()) : ?>
+		<a href="sign-out.php">Sign Out</a></p>
+		<?php endif; ?>
 		<div class="header-container">
 			<header class="mainHead">
 				<figure>
@@ -96,19 +95,18 @@ $event_array = check_schedule($db,$user_id);
 							
 				    			if($notify['confirmed'] == 0 ){
 
-				    				echo '<li><a href="event.php?id='.$notify[1].'">You have an event to confirm</a></li>';
-											
+				    				echo '<li><a href="event.php?id='.$notify[1].'">You have an event to confirm</a></li>';		
 				    			}
-
 				    		}  
 
 				    		?>
-				    		
 				    	<ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="js/calendar.js"></script>
 <body>
 </html>
