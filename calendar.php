@@ -10,18 +10,16 @@ if (!user_is_signed_in()) {
 	exit;
 }
 
-
 $user_id = $_SESSION['user-id'];
 $user_name = get_username ($db, $user_id);
 $event_array = check_schedule($db,$user_id);
-
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Calendar &middot I Have Plans</title>
+	<title>Calendar &middot; I Have Plans</title>
 	<link href="css/general.css" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +45,6 @@ $event_array = check_schedule($db,$user_id);
 			<div class="eventAdd">
 				<header class="contentHead">
 					<h1><?php echo date('F d');?> - <?php echo date("F d", mktime(0, 0, 0, date("m"), date("d")+4));?></h1>
-
 				</header>
 				<div class="contentBody">
 					<div class="calendarBody clearfix">
@@ -63,11 +60,9 @@ $event_array = check_schedule($db,$user_id);
 
 					          </tr>
 					        </thead>
-
 					        <tbody>
 					        	<?php create_table (6, 30, $event_array);?> 
 					        </tbody>
-
 					    </table>  
 					</div>
 					 <div class="notifications">

@@ -630,16 +630,39 @@ thead tr th:nth-child(2n+1) {
 }
 
 .eventTime {
+	position:relative;
 	margin: 0;
 	color: #000;
 	background-color: #fff;
-	border-left: 1px solid #000;
-	border-right: 1px solid #000;
+	border: 1px solid #000;
+
 
 	text-align: left;
 
 
 }
+
+.eventTime a {
+	position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		font-size: 1.5em;
+
+}
+
+.moreInfo {
+	position: absolute;
+	padding: 20px 10px;
+	left: 6px;
+	bottom: 5px;
+
+	width: 80%;
+
+	background-color: red;
+
+}
+
 
 .tableTime {
 	padding-right: 5px;
@@ -661,6 +684,7 @@ thead tr th:nth-child(2n+1) {
 
 	list-style: none;
 }
+
 
 
 

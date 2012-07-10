@@ -156,7 +156,7 @@ function display_schedule_events($time_seconds, $interval, $event_array, $displa
 
 							$displayed_event_array[$k] = true;
       						
-      						echo('<td class="eventTable eventTime" rowspan="' . $total_cells . '"><a href="event.php?id='.$event_array[$k][4].'">'.$event_array[$k][0].'</a></td>'); 
+      						echo('<td class="eventTable eventTime" rowspan="' . $total_cells . '"><a href="event.php?id='.$event_array[$k][4].'"><span class="eventTitle">'.$event_array[$k][0].'</span> <span class="moreInfo">More Info</span></a></td>'); 
 
       					} 
 

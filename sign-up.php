@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>I Have Plans &middot Login Page</title>
+	<title>I Have Plans &middot; Login Page</title>
 	<link href="css/general.css" rel="stylesheet">
 </head>
 <body>

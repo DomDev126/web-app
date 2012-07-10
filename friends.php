@@ -22,7 +22,6 @@ $errors = array();
 
 	if(isset($email)) {
 		$friend_id =  friend_email_check($db, $email);
-
 	}
 
 	if(!$friend_id){
@@ -52,7 +51,6 @@ $errors = array();
 	<link href="css/general.css" rel="stylesheet">
 </head>
 <body>
-	
 	<div class="container">	
 	<?php if (user_is_signed_in()) : ?>
 		<p class="sign-out"><a href="sign-out.php">Sign Out</a></p>
