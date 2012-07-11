@@ -106,6 +106,17 @@ function delete_friend ($db, $user_id, $friend_id) {
 
 }
 
+function delete_event ($db, $user_id, $event_id){
+
+	$sql= $db->prepare(' DELETE FROM user_events WHERE user_id = :user_id AND event_id = :event_id '); 
+
+	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+	$sql->bindValue(':event_id', $event_id, PDO::PARAM_INT);
+	$sql->execute();
+
+
+}
+
 function add_friend_id ($db, $user_id, $friend_id) {
 	
 	$sql= $db->prepare(' INSERT INTO friends (user_id, friend_id) VALUES (:user_id, :friend_id) '); 

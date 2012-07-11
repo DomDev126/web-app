@@ -89,7 +89,7 @@ $errors = array();
 							$friend_username = get_username ($db, $current_friend);
 							$friend_email = get_friend_email ($db, $current_friend);
 							
-							echo '<li class="friendHolder">'.$friend_username.' || '.$friend_email['email'].'</li><a class="delete" href="delete.php">Delete</a> ';
+							echo '<li class="friendHolder">'.$friend_username.'  (✉  '.$friend_email['email'].')</li><a class="delete" href="delete.php">Delete</a> ';
 							 }; ?>
 						</ul>
 						<form id="addFriend" method="post" action="friends.php">

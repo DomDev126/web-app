@@ -585,7 +585,7 @@ border-radius: 10px;
 }
 
 .calendarBody table {
-	
+
 	border-collapse:collapse;
 	background-color: #ccc;
 	color: #000;
@@ -595,7 +595,7 @@ border-radius: 10px;
 
 .calendarBody thead{
 	font-size: 2em;
-	background-color : red;
+
 
 }
 .calendarBody thead th {
@@ -605,13 +605,16 @@ border-radius: 10px;
 
 
 .calendarBody tbody td{
+
 	font-size: 12px;
 	text-align:center;
 	
 }
 
 tr:nth-child(odd) { 
+
 	background: #ddd; 
+
 }
 
 .dates {
@@ -625,16 +628,18 @@ thead tr th:nth-child(2n+1) {
 }
 
 .tableQuery {
+
 	width: 70%;
 	padding:0.5em;
+
 }
 
 .eventTime {
 	position:relative;
 	margin: 0;
 	color: #000;
-	background-color: #fff;
-	border: 1px solid #000;
+	background-color: #f5d4cf;
+	border: 1px solid #aaa;
 
 
 	text-align: left;
@@ -653,13 +658,27 @@ thead tr th:nth-child(2n+1) {
 
 .moreInfo {
 	position: absolute;
-	padding: 20px 10px;
-	left: 6px;
+	padding: 10px 10px;
+	left: 10px;
 	bottom: 5px;
 
-	width: 80%;
+	width: 70%;
 
-	background-color: red;
+	border: 1px solid #aaa;
+
+	background: #fcfff4; /* Old browsers */
+	background: -moz-linear-gradient(top, #fcfff4 0%, #f4f4e3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(100%,#f4f4e3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fcfff4 0%,#f4f4e3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fcfff4 0%,#f4f4e3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fcfff4 0%,#f4f4e3 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fcfff4 0%,#f4f4e3 100%); /* W3C */
+	
+
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+		border-radius: 30px;
+
 
 }
 

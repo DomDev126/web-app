@@ -9,8 +9,6 @@ if (!user_is_signed_in()) {
 	exit;
 }
 
-
-
 $user_id = $_SESSION['user-id'];
 $event_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
 
@@ -113,7 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				 ?>
 				
 			</form>
+			<p><a href="delete.php?id=<?php $_SESSION['delete-event'] = true; echo $event_id;?>">Delete</a></p>
 		</div>
+
 	<div>
 </body>
 </html>
