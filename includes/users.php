@@ -19,9 +19,6 @@ function user_create ($db, $username, $password, $email) {
 	$sql->bindValue(':email', $email, PDO::PARAM_STR);
 	$sql->execute();
 
-	header('Location: index.php');
-	exit;
-
 	return $db->lastInsertId();
 }
 

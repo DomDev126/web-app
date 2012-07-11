@@ -13,6 +13,14 @@ $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
+
+	var_dump($_FILES);
+
+	$file_tmp = $_FILES['screenshot']['tmp_name'];
+	
+	move_uploaded_file($file_tmp, "images/".$_FILES["screenshot"]["name"]);
+
+
 	$name_check = friend_check($db, $username);
 
 	if($name_check) {
@@ -33,6 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	if (empty($errors)) {
 		$id = user_create($db, $username,  $password, $email);
+/*
+		header('Location: index.php');
+		exit;*/
+
 
 	}
 }
@@ -48,8 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<div class="container">
 
 		<div class="login-box">
-			<form id="login" method="post" action="sign-up.php">
-
+			<form  enctype="multipart/form-data" id="login" method="post" action="sign-up.php">
+				<input type="hidden" name="MAX_FILE_SIZE" value ="324768">
 				<h2>Sign Up</h2>
 				<div class="panel">
 					<div class="panel-info">
@@ -71,12 +83,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<input id="email" type="email" name="email" >
 					</div>
 				</div>
+				<div class="panel">
+					<div class="panel-info">
+						<label for="file">Upload Picture:</label>
+						<input id="screenshot" type="file" name="screenshot" >
+					</div>
+				</div>
 				<div class="go-button">
 					<button type="submit">Go</button>
 					<?php if(isset($errors['user-exists'])) { echo ('That user already exists.');} ?>
 				</div>
 			</form>
 		</div>
+
+
 	<div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="js/user-validation.js"></script>
