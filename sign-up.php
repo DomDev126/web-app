@@ -3,13 +3,14 @@
 require_once 'includes/db.php';
 require_once 'includes/users.php';
 require_once 'includes/requests.php';
+require_once 'includes/functions.php';
 
 $errors = array();
 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password', FILTER_UNSAFE_RAW);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-// store screenshot tmp file location
+
 
 
 
@@ -17,8 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	$file_tmp = $_FILES['photo']['tmp_name'];
 
+
 	//check to make sure the name doesn't already exist
 	$name_check = friend_check($db, $username);
+
+
 
 	if($name_check) {
 		$errors['user-exists'] = true;
@@ -37,18 +41,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	if (isset($_FILES['photo']['name'])) {
-		$photo = $_FILES['photo']['name'];
+		
+		$photo_name = stripslashes($_FILES['photo']['name']);
+
 	}else{
+
 		$photo = 0;
+		
 	}
 
 	if (empty($errors)) {
 		
 		// create the user
-		$id = user_create($db, $username,  $password, $email, $photo);
+		$id = user_create($db, $username, $password, $email, $photo_name);
 
-		//move the screenshot to the images folder
-		move_uploaded_file($file_tmp, "images/".$_FILES["photo"]["name"]);
+
+		//resize and move the screenshot to the images folder
+		image_resize_move($file_tmp, $photo_name);
+		
 
 		header('Location: index.php');
 		exit;

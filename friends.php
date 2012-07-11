@@ -14,7 +14,8 @@ if (!user_is_signed_in()) {
 $email= filter_input(INPUT_POST, 'addEmail', FILTER_SANITIZE_STRING);
 
 $user_id = ($_SESSION['user-id']);
-$user_name = ucFirst($_SESSION['username']);
+
+$user_info = get_username ($db, $user_id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -58,8 +59,8 @@ $errors = array();
 		<div class="header-container">
 			<header class="mainHead">
 				<figure>
-					<a href="calendar.php"><img src="images/clips/myface.png" alt=""></a>
-					<figcaption><?php echo $user_name;?></figcation>
+					<div id="imgWrap"><img src="<?php echo ("images/".$user_info['photo']);?>" alt="User Photo"></div>
+					<figcaption>Welcome, <?php echo $user_info['username'];?></figcaption>
 				</figure>	
 				<nav>
 					<ul>

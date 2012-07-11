@@ -31,7 +31,7 @@ $event_array = check_schedule($db,$user_id);
 			<header class="mainHead">
 				<figure>
 					<div id="imgWrap"><img src="<?php echo ("images/".$user_info['photo']);?>" alt="User Photo"></div>
-					<figcaption>Welcome, <?php echo $user_info['username'];?></figcation>
+					<figcaption>Welcome, <?php echo $user_info['username'];?></figcaption>
 				</figure>	
 				<nav>
 					<ul>
@@ -57,7 +57,6 @@ $event_array = check_schedule($db,$user_id);
 					            <th class="dates"><?php echo date("m/d", mktime(0, 0, 0, date("m"), date("d")+2));?></th>
 					            <th class="dates"><?php echo date("m/d", mktime(0, 0, 0, date("m"), date("d")+3));?></th>
 					            <th class="dates"><?php echo date("m/d", mktime(0, 0, 0, date("m"), date("d")+4));?></th>
-
 					          </tr>
 					        </thead>
 					        <tbody>

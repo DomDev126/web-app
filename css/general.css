@@ -102,14 +102,13 @@ h2 {font-size: 2.25em;}
 	width: 250px;
 	height: 1200px;
 
-	background: #111111; /* Old browsers */
+	background: #111111;
 }
 
 .mainHead figure {
 	margin:0;
 	width: 250px;
 	height: 225px;
-	background-color: #000;
 
 }
 
@@ -642,6 +641,11 @@ thead tr th:nth-child(2n+1) {
 
 }
 
+.eventTable {
+position:relative;
+
+}
+
 .eventTime {
 	position:relative;
 	margin: 0;
@@ -661,6 +665,7 @@ thead tr th:nth-child(2n+1) {
 		height: 100%;
 		top:0;
 		font-size: 1.5em;
+
 
 }
 

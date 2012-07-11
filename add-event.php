@@ -59,6 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
+$user_info = get_username ($db, $user_id);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,9 +88,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="header-container">
 			<header class="mainHead">
 				<figure>
-					<a href="calendar.php"><img src="images/clips/myface.png" alt=""></a>
-					<figcaption><?php echo $user_name;?></figcation>
-				</figure>	
+					<div id="imgWrap"><img src="<?php echo ("images/".$user_info['photo']);?>" alt="User Photo"></div>
+					<figcaption>Welcome, <?php echo $user_info['username'];?></figcaption>
+				</figure>		
 				<nav>
 					<ul>
 						<li id="friends"><a href="friends.php">Friends</a></li>

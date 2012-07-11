@@ -1,5 +1,66 @@
 <?php 
 
+
+function image_resize_move ($file_tmp, $photo_name) {
+
+
+ $filename = $photo_name;
+ $uploadedfile =$file_tmp;
+ $extension = getExtension($filename);
+
+if($extension=="jpg" || $extension=="jpeg" ) {
+
+	$src = imagecreatefromjpeg($uploadedfile);
+
+} else if($extension=="png") {
+
+	$src = imagecreatefrompng($uploadedfile);
+} else {
+
+	$src = imagecreatefromgif($uploadedfile);
+
+}
+ 
+list($width,$height)=getimagesize($uploadedfile);
+
+$newwidth = 240;
+$newheight = ($height/$width)*$newwidth;
+$tmp  = imagecreatetruecolor($newwidth,$newheight);
+
+imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight, $width,$height);
+
+$image_name = "images/".$filename;
+
+
+
+$my_img = imagejpeg($tmp, $image_name, 100);
+
+var_dump($image_name);
+
+
+move_uploaded_file($uploadedfile, $my_img); 
+
+imagedestroy($src);
+imagedestroy($tmp);
+
+
+}
+
+
+function getExtension($str) {
+
+         $i = strrpos($str,".");
+         if (!$i) { return ""; } 
+
+         $l = strlen($str) - $i;
+         $ext = substr($str,$i+1,$l);
+         return $ext;
+ }
+
+
+
+
+
 function check_schedule($db, $user_id) {
 
 	$current_date =  date("m/d/Y");

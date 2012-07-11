@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 function get_hashed_password ($password) {
 	$rand = substr(strtr(base64_encode(openssl_random_pseudo_bytes(16)), '+', '.'), 0, 22);
 	$salt = '$2a$12$' . $rand;
@@ -10,6 +12,7 @@ function get_hashed_password ($password) {
 }
 
 function user_create ($db, $username, $password, $email, $photo) {
+	
 	$sql = $db->prepare('
 	INSERT INTO users (username, password, email, photo)
 	VALUES (:username, :password, :email, :photo)
@@ -21,9 +24,8 @@ function user_create ($db, $username, $password, $email, $photo) {
 	$sql->execute();
 
 	return $db->lastInsertId();
+
 }
-
-
 
 
 
