@@ -11,7 +11,7 @@ if (!user_is_signed_in()) {
 }
 
 $user_id = $_SESSION['user-id'];
-$user_name = get_username ($db, $user_id);
+$user_info = get_username ($db, $user_id);
 $event_array = check_schedule($db,$user_id);
 
 ?>
@@ -30,8 +30,8 @@ $event_array = check_schedule($db,$user_id);
 		<div class="header-container">
 			<header class="mainHead">
 				<figure>
-					<img src="images/clips/myface.png" alt="">
-					<figcaption>Welcome, <?php echo $user_name;?></figcation>
+					<div id="imgWrap"><img src="<?php echo ("images/".$user_info['photo']);?>" alt="User Photo"></div>
+					<figcaption>Welcome, <?php echo $user_info['username'];?></figcation>
 				</figure>	
 				<nav>
 					<ul>
@@ -99,6 +99,7 @@ $event_array = check_schedule($db,$user_id);
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

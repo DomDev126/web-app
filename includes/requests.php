@@ -52,15 +52,17 @@ function friend_email_check($db, $email) {
 
 function get_username ($db, $id){
 
-	$sql = $db->prepare('SELECT username FROM users WHERE id = :id');
+	$sql = $db->prepare('SELECT username, photo FROM users WHERE id = :id');
 
 	$sql->bindValue(':id', $id, PDO::PARAM_INT);
 	$sql->execute();
 	$results = $sql->fetch();
 	$user_name = ucfirst($results['username']);
 
-	return $user_name;
+	return $results;
 }
+
+
 
 function get_friend_email ($db, $id){
 

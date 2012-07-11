@@ -9,18 +9,23 @@ function get_hashed_password ($password) {
 	return crypt($password, $salt);
 }
 
-function user_create ($db, $username, $password, $email) {
+function user_create ($db, $username, $password, $email, $photo) {
 	$sql = $db->prepare('
-	INSERT INTO users (username, password, email)
-	VALUES (:username, :password, :email)
+	INSERT INTO users (username, password, email, photo)
+	VALUES (:username, :password, :email, :photo)
 	');
 	$sql->bindValue(':username', $username, PDO::PARAM_STR);
 	$sql->bindValue(':password', get_hashed_password($password), PDO::PARAM_STR);
 	$sql->bindValue(':email', $email, PDO::PARAM_STR);
+	$sql->bindValue(':photo', $photo, PDO::PARAM_STR);
 	$sql->execute();
 
 	return $db->lastInsertId();
 }
+
+
+
+
 
 function user_is_signed_in () {
 	if (!isset($_SESSION['user-id'])

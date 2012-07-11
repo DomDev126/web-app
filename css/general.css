@@ -74,6 +74,14 @@ h2 {font-size: 2.25em;}
 
 /********** HEADER ***************/
 
+
+#imgWrap{
+
+	width:88%;
+	height: 90%;
+	overflow: hidden;
+}
+
 .header-container {
 	float: left;
 
@@ -112,7 +120,7 @@ h2 {font-size: 2.25em;}
 
 .mainHead figcaption{
 	margin: 0; 
-	margin-top: -10px;
+	margin-top: 0px;
 	padding: 0;
 	height: 10px;
 	font-size: 1.1em;
