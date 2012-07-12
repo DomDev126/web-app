@@ -5,6 +5,8 @@ Developing a fully functional web application.
 
 Check out an interactive prototype here. [I Have Plans](http://invis.io/WX4ADGS2)
 
+ * * *
+
 Functionality to Date
 =====================
 - Users can register and sign in
@@ -14,6 +16,7 @@ Functionality to Date
 - Friends can be added and deleted
 - Users may check events and also delete events
 
+ * * *
 
 Functionality to be Added
 ========================
