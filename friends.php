@@ -32,7 +32,7 @@ $errors = array();
 	if($friend_id) {
 
 		$friendAlready = check_friend_id ($db, $user_id, $friend_id);
-		if(!$friendAlready){
+		if(!$friendAlready && $friendAlready !== $user_id){
 
 		add_friend_id ($db, $user_id, $friend_id);
 		
@@ -86,11 +86,11 @@ $errors = array();
 							foreach($friend_ids as $friends) {
 
 							$current_friend = intval($friends['friend_id']);
-							$_SESSION['friend_id'] = $current_friend;
+				
 							$friend_info = get_username ($db, $current_friend);
 							$friend_email = get_friend_email ($db, $current_friend);
 							
-							echo '<li class="friendHolder"><img src="'.'images/'.$friend_info['photo'].'" alt="">'.$friend_info['username'].'  (✉  '.$friend_email['email'].')</li><a class="delete" href="delete.php">Delete</a> ';
+							echo '<li class="friendHolder"><div><img src="'.'images/'.$friend_info['photo'].'" alt=""></div><span>'.$friend_info['username'].'  (  '.$friend_email['email'].' )</span></li><a class="delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
 							 }; ?>
 						</ul>
 						<form id="addFriend" method="post" action="friends.php">

@@ -9,21 +9,14 @@ body{
 	font: normal 100%/1.5 arial, sans-serif;
 }
 
-
 .container {
 	margin: 0 auto;
 	padding: 0;
 	width: 1400px;
-
-
-
 }
 
 h1 {font-size: 2.5em;}
 h2 {font-size: 2.25em;}
-
-
-
 
 .panel {
 	height: 100px;
@@ -53,8 +46,6 @@ h2 {font-size: 2.25em;}
 	margin: 0 auto;
 	width: 90%;
 }
-
-
 
 .sign-out {
 	margin: 0 ;
@@ -397,8 +388,6 @@ form h2 {
 .eventBody, .friendBody, .calendarBody {
 
 	padding: 2em;
-
-	
 	background-color: #000;
 	background: url("../images/bg/eventsbg.jpg");
 	
@@ -406,7 +395,6 @@ form h2 {
 	border-radius: 10px;
 	
 	color: #fff;
-
 
 }
 
@@ -822,8 +810,10 @@ position:relative;
 
 .friendHolder{
 	position: relative;
-
+	height: 40px;
+	width: 400px;
 	margin: 10px;
+
 
 	background-color: #d9d9d9;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
@@ -835,12 +825,31 @@ position:relative;
 	border:1px solid #efefef;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+	font-size: 1.1em;
+
+
 }
 
-.friendHolder > img {
-width: 10%;
+.friendHolder div{
+	display:inline-block;
+	padding-right: 20px;
+	width: 50px;
+	height: 40px;
+	overflow:hidden;
 }
 
+.friendHolder div > img {
+width: 100%;
+
+
+}
+
+
+.friendHolder span {
+	position: absolute;
+	line-height: 40px;
+
+}
 .delete {
 	display:inline-block;
 	color:#fff;
