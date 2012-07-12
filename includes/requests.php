@@ -62,6 +62,17 @@ function get_username ($db, $id){
 	return $results;
 }
 
+function get_username_single ($db, $id){
+
+	$sql = $db->prepare('SELECT username FROM users WHERE id = :id');
+
+	$sql->bindValue(':id', $id, PDO::PARAM_INT);
+	$sql->execute();
+	$results = $sql->fetch();
+	$user_name = ucfirst($results['username']);
+
+	return $results;
+}
 
 
 function get_friend_email ($db, $id){

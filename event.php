@@ -74,12 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							$counter = 0;
 							foreach ($confirmed_user_ids as $users) {
 								
-								$displayed_user = get_username($db, $users['user_id'] );
+								$displayed_user = get_username_single($db, $users['user_id'] );
+
 
 								if($counter>0) {
-									echo ', '.$displayed_user;
+									echo ', '.ucfirst($displayed_user['username']);
 								}else {
-									echo $displayed_user;
+									echo ucfirst($displayed_user['username']);
 									$counter+=1;
 								}
 							}

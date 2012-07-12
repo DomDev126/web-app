@@ -32,7 +32,7 @@ $errors = array();
 	if($friend_id) {
 
 		$friendAlready = check_friend_id ($db, $user_id, $friend_id);
-		if(!$friendAlready && $friendAlready !== $user_id){
+		if(!$friendAlready && $friend_id !== $user_id){
 
 		add_friend_id ($db, $user_id, $friend_id);
 		
