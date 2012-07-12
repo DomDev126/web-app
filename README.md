@@ -16,7 +16,7 @@ Functionality to Date
 
 
 Functionality to be Added
-========================+
+========================
 
 - Deleted events notify other users of deletion
 - Fixing css/styles
