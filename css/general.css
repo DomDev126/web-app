@@ -313,6 +313,14 @@ form h2 {
 
 }
 
+#photo {
+	margin: 1.5em 0;
+
+}
+
+[for="file"] {
+	font-size: 0.85em;
+}
 
 /************ Add Event *************/
 
@@ -827,6 +835,10 @@ position:relative;
 	border:1px solid #efefef;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+}
+
+.friendHolder > img {
+width: 10%;
 }
 
 .delete {

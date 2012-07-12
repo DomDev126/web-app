@@ -24,10 +24,10 @@ if($extension=="jpg" || $extension=="jpeg" ) {
 list($width,$height)=getimagesize($uploadedfile);
 
 $newwidth = 240;
-$newheight = ($height/$width)*$newwidth;
+$newheight = ($height/$width) * $newwidth;
 $tmp  = imagecreatetruecolor($newwidth,$newheight);
 
-imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight, $width,$height);
+imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight, $width, $height);
 
 $image_name = "images/".$filename;
 

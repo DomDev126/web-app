@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>
 				<div class="panel">
 					<div class="panel-info">
-						<label for="file">Upload Picture:</label>
+						<label for="file">Upload Photo:</label>
 						<input id="photo" type="file" name="photo" >
 					</div>
 				</div>
@@ -108,6 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<button type="submit">Go</button>
 					<?php if(isset($errors['user-exists'])) { echo ('That user already exists.');} ?>
 				</div>
+				<a href="index.php">Already a member</a>
 			</form>
 		</div>
 	<div>

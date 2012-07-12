@@ -87,10 +87,10 @@ $errors = array();
 
 							$current_friend = intval($friends['friend_id']);
 							$_SESSION['friend_id'] = $current_friend;
-							$friend_username = get_username ($db, $current_friend);
+							$friend_info = get_username ($db, $current_friend);
 							$friend_email = get_friend_email ($db, $current_friend);
 							
-							echo '<li class="friendHolder">'.$friend_username.'  (✉  '.$friend_email['email'].')</li><a class="delete" href="delete.php">Delete</a> ';
+							echo '<li class="friendHolder"><img src="'.'images/'.$friend_info['photo'].'" alt="">'.$friend_info['username'].'  (✉  '.$friend_email['email'].')</li><a class="delete" href="delete.php">Delete</a> ';
 							 }; ?>
 						</ul>
 						<form id="addFriend" method="post" action="friends.php">
