@@ -19,6 +19,7 @@ h1 {font-size: 2.5em;}
 h2 {font-size: 2.25em;}
 
 .panel {
+	position:relative;
 	height: 100px;
 	width: 100%;
 
@@ -33,6 +34,8 @@ h2 {font-size: 2.25em;}
 	background-image:         linear-gradient(to bottom, #989999, #787979);
 	border-bottom: 1px solid #000;
 	border-top: 1px solid #aaa;
+
+	z-index: 1000;
 }
 
 
@@ -63,6 +66,8 @@ h2 {font-size: 2.25em;}
 }
 
 
+
+
 /********** HEADER ***************/
 
 
@@ -88,34 +93,54 @@ h2 {font-size: 2.25em;}
 .mainHead {
 	margin: 0;
 
-
-
 	width: 250px;
 	height: 1200px;
 
-	background: #111111;
+	background: url("../images/bg/friends-bg.png");
+
 }
 
 .mainHead figure {
 	margin:0;
-	width: 250px;
-	height: 225px;
+	padding: 0;
+	height: 230px;
+
+
+
+
 
 }
 
 .mainHead img {
-	padding: 1em;
+	margin: 25px 0 0 25px;
+	padding: 0;
+	width: 100%;
 
 }
 
 .mainHead figcaption{
 	margin: 0; 
-	margin-top: 0px;
+	margin-top: 1px;
 	padding: 0;
-	height: 10px;
+	height: 32px;
 	font-size: 1.1em;
 	text-align: center;
-	color: #fff;	
+	color: #333;	
+
+	background-color: #d9d9d9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #d9d9d9, #c0c0c0); /* Chrome 10+, Saf5.1+, iOS 5+ */ background-image:    -moz-linear-gradient(top, #d9d9d9, #c0c0c0); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #d9d9d9, #c0c0c0); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
+
+	box-shadow: inset 1px 1px 10px #9a9a9a,
+				0 0 3px #fff;
+	border:1px solid #efefef;
+	text-shadow: 0 1px 0 #ddd;
+
+
+
+	line-height: 32px;
 
 }
 
@@ -195,6 +220,10 @@ h2 {font-size: 2.25em;}
 }
 
 
+
+
+
+
 /************ LoginBox *************/
 
 .login-box {
@@ -218,9 +247,9 @@ h2 {font-size: 2.25em;}
 
 	color: #000;
 }
-.login-box a:hover {
+/*.login-box a:hover {
 	color: #eee;
-}
+}*/
 
 form h2 {
 	position: relative;
@@ -268,6 +297,8 @@ form h2 {
 				0 -1px 0 #888;
 }
 
+
+
 .panel-info > input {
 
 	width: 290px;
@@ -304,14 +335,45 @@ form h2 {
 
 }
 
-#photo {
-	margin: 1.5em 0;
+
+
+.bottomLink {
+	position: relative;
+	z-index:10;
+	float: right;
+	margin:-10px 10px 0;
+	padding: 15px 10px 5px;
+	
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 1%, #dbdbdb 95%, #e0e0e0 96%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#fefefe), color-stop(95%,#dbdbdb), color-stop(96%,#e0e0e0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fefefe 1%,#dbdbdb 95%,#e0e0e0 96%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fefefe 1%,#dbdbdb 95%,#e0e0e0 96%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fefefe 1%,#dbdbdb 95%,#e0e0e0 96%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fefefe 1%,#dbdbdb 95%,#e0e0e0 96%); /* W3C */
+	
+
+	-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-bottomright:10px;
+
+	-webkit-border-bottom-left-radius:10px;
+	-webkit-border-bottom-right-radius:10px;
+
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+
+	border: 1px solid #fff;
+
+	box-shadow: inset 0 10px 2px #aaa;
+
+	text-decoration: none;
+	text-shadow: 0 1px 1px #fff;
+	font-size:0.8em;
+
+	
 
 }
 
-[for="file"] {
-	font-size: 0.85em;
-}
 
 /************ Add Event *************/
 
@@ -324,9 +386,11 @@ form h2 {
 
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-	background-color: rgba(250,250,250,0.1);
-	border: 1px solid #232323;
+
+	background: url("../images/bg/friends-bg.png");
+	border: 1px solid #ddd;
 	text-align: center;
+	text-shadow: 0 2px 0 #fff;
 }
 .contentHead h1{
 	margin:0;
@@ -379,7 +443,7 @@ form h2 {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	
-		background-color: rgba(250,250,250,0.1);
+	background-color: rgba(250,250,250,0.1);
 
 
 
@@ -388,13 +452,24 @@ form h2 {
 .eventBody, .friendBody, .calendarBody {
 
 	padding: 2em;
-	background-color: #000;
-	background: url("../images/bg/eventsbg.jpg");
 	
+	background: url("../images/bg/friends-bg.png");
+
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	
-	color: #fff;
+
+font-weight: bold;
+
+	text-shadow: 0 2px 0 #fff;
+
+	color: #000;
+
+}
+
+
+.calendarBody{
+
+	text-shadow: none
 
 }
 
@@ -458,10 +533,12 @@ form {
 
 .loc-notice {
 	position: absolute;
-	top: 0;
-	right: -300px;
+	top: 5px;
+	right: -320px;
 	font-size: 0.4em;
-	color: #f37766;
+	color: #f35944;
+
+	text-shadow: none;
 }
 
 .map-case {
@@ -477,7 +554,10 @@ form {
 
 	border:1px solid #efefef;
 	-webkit-border-radius: 10px;
-border-radius: 10px;
+	border-radius: 10px;
+
+	box-shadow: inset 1px 1px 10px #9a9a9a,
+				2px 2px 10px #fff;
 
 }
 
@@ -504,10 +584,22 @@ border-radius: 10px;
 
 }
 
+#map-info label {
+	margin-top: 10px;
+	color:#000;
+	text-shadow: 0 1px #dfdfdf;
+
+
+}
+
+
 #map-info h3 {
 	margin: 0;
-	color: #000;
+	padding: 0 0 10px;
+	color: #292929;
 	font-size: 1.6em;
+
+	text-shadow: 0 1px 1px #fff;
 
 }
 
@@ -546,7 +638,7 @@ border-radius: 10px;
 }
 
 #datepicker {
-	margin-left: 3px;
+	margin-left: -10px;
 	width: 150px;
 
 
@@ -638,37 +730,43 @@ thead tr th:nth-child(2n+1) {
 }
 
 .eventTable {
-position:relative;
+	/*position:relative;*/
 
 }
 
 .eventTime {
-	position:relative;
+	/*position:relative;*/
 	margin: 0;
 	color: #000;
 	background-color: #f5d4cf;
 	border: 1px solid #aaa;
 
-
 	text-align: left;
-
+	vertical-align: top;
 
 }
 
 .eventTime a {
-	position: absolute;
-		width: 100%;
-		height: 100%;
-		top:0;
-		font-size: 1.5em;
+	position: relative;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	display: block;
+	/*left: 0;*/
+	/*bottom: 0;*/
+	/*right: 0;*/
+	/*top:0;*/
+	font-size: 1.5em;
+	min-height: 5em;
 
 
 }
 
 .moreInfo {
 	position: absolute;
+	display: block;
 	padding: 10px 10px;
-	left: 10px;
+	margin-left: -35%;
+	left: 50%;
 	bottom: 5px;
 
 	width: 70%;
@@ -739,7 +837,7 @@ position:relative;
 
 #addFriend{
 	float:right;
-	padding: 1em;
+	padding: 0.5em 1em 1em;
 	height: 90px;
 	background-color: #d9d9d9;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
@@ -750,6 +848,9 @@ position:relative;
 	border:1px solid #efefef;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+	box-shadow: inset 2px 2px 1px #aaa,
+				2px 2px 10px #fff;
+
 
 	text-align: center;
 	color:#000;
@@ -810,6 +911,7 @@ position:relative;
 
 .friendHolder{
 	position: relative;
+	z-index:100;
 	height: 40px;
 	width: 400px;
 	margin: 10px;
@@ -822,10 +924,15 @@ position:relative;
 	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
 	color: #000;
 
-	border:1px solid #efefef;
+	
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	font-size: 1.1em;
+
+		box-shadow: inset 1px 1px 10px #9a9a9a,
+				2px 2px 10px #fff;
+		border:1px solid #efefef;
+
 
 
 }
@@ -836,10 +943,12 @@ position:relative;
 	width: 50px;
 	height: 40px;
 	overflow:hidden;
+
+
 }
 
 .friendHolder div > img {
-width: 100%;
+	width: 100%;
 
 
 }
@@ -849,11 +958,19 @@ width: 100%;
 	position: absolute;
 	line-height: 40px;
 
-}
-.delete {
-	display:inline-block;
-	color:#fff;
+	text-shadow: 0 1px 0 #eee;
 
+
+
+}
+
+.delete {
+	position: relative;
+	z-index: 10;
+	margin-top: -20px;
+	margin-right: 20px;
+	color: #000;
+	font-size: 0.75em;
 
 }
 
@@ -880,7 +997,7 @@ width: 100%;
 	padding: 0;
 	margin: 0;
 	top: 50px;
-	left: 30%;
+
 	font-size: 20px;
 	width: 100%;
 
@@ -888,10 +1005,29 @@ width: 100%;
 				0 -1px 0 #888;
 
 }
+
+
+
 .second {
-	line-height: 2;
+	margin:0 auto;
+	line-height: 2.5;
 
 }
+
+.small-text{
+	margin: 0;
+	padding: 0;
+
+}
+
+.small-text > p {
+	margin: 0;
+	line-height: 2;
+
+	text-align: center;
+}
+
+
 
 
 #panel-time:before, #panel-location:before, #panel-friends:before {
@@ -942,4 +1078,8 @@ width: 100%;
   zoom: 1;
 }
 
+
+input::-webkit-input-placeholder, input:-moz-placeholder  {
+    color: #000;
+}
 

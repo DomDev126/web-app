@@ -1,6 +1,6 @@
 <?php
 	
-require_once 'includes/db.php';
+require_once 'includes/db.inc.php';
 
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 

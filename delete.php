@@ -1,8 +1,8 @@
 <?php
 
-require_once 'includes/db.php';
-require_once 'includes/requests.php';
-require_once 'includes/users.php';
+require_once 'includes/db.inc.php';
+require_once 'includes/requests.inc.php';
+require_once 'includes/users.inc.php';
 
 $user_id = $_SESSION['user-id'];
 $event_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
