@@ -27,7 +27,7 @@
 		</div>
 		<div class="content-container">
 			<div class="eventAdd">
-				<header class="contentHead">
+				<header class="contentHead extended">
 					<h1>Add Friends</h1>
 					<p><a href="calendar.php">Back to Calendar</a></p>
 				</header>

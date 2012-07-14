@@ -1,38 +1,36 @@
+$(document).ready(function () {   
+    
+
      function initialize() {
+        
         var mapOptions = {
           center: new google.maps.LatLng(45.351904,-75.756083),
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-		  componentRestrictions: {country: 'can'}
-
-
+  		    componentRestrictions: {country: 'can'}
         };
 		
         var map = new google.maps.Map(document.getElementById('map_canvas'),
-          mapOptions);
-
-        var input =  document.getElementById('searchTextField');
-        var autocomplete = new google.maps.places.Autocomplete(input);
-
-        autocomplete.bindTo('bounds', map);
-
-        var infowindow = new google.maps.InfoWindow();
-        var marker = new google.maps.Marker({
-          map: map
-          , title: "Test"
+          mapOptions),
+          input =  document.getElementById('searchTextField'),
+          autocomplete = new google.maps.places.Autocomplete(input),
+          infowindow = new google.maps.InfoWindow(),
+          marker = new google.maps.Marker({
+            map: map,
+            title: "Test"
         });
-
-		google.maps.event.addListener(marker, 'click', function () {
-			//alert('works');
-		})
-
+ 
+        autocomplete.bindTo('bounds', map);
 
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
           infowindow.close();
           var place = autocomplete.getPlace();
+         
           if (place.geometry.viewport) {
+            
             map.fitBounds(place.geometry.viewport);
           } else {
+           
             map.setCenter(place.geometry.location);
             map.setZoom(16);  
           }
@@ -57,15 +55,11 @@
                       ].join(' ');
           }
 
-        //  infowindow.setContent('<div id="mapMarker"><strong>' + place.name + '</strong><br>' + address + '<p  id="addThis">Click on the marker to add this location.</p>');
-          //infowindow.open(map, marker);
-		 var location = document.getElementById('location');
+		  var location = document.getElementById('location');
       location.value = address;
 		
 		
         });
-
-        
 
         function setupClickListener(id, types) {
           var radioButton = document.getElementById(id);
@@ -78,3 +72,8 @@
         setupClickListener('changetype-establishment', ['establishment']);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+});

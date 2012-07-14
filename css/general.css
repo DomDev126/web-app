@@ -388,6 +388,12 @@ text-shadow: 0 1px 0 #d5d5d5,
 	text-align: center;
 	text-shadow: 0 2px 0 #fff;
 }
+
+.extended {
+
+	width: 80%;
+}
+
 .contentHead h1{
 	margin:0;
 	color:#000;
@@ -1103,11 +1109,36 @@ thead tr th:nth-child(2n+1) {
 	color: #000;
 	font-size: 0.75em;
 
+	-webkit-transition: all 900ms;
+
 }
 
+.googleMapCanvas{
+	padding: 0 2em;
+	position: absolute;
+	top: 370px;
+	left: 625px;
 
+}
 
+.googleMapCanvas:before{
+	position: absolute;
+	padding-left: 10px;
+	content:"Map";
+	height: 50px;
+	width: 100px;
+	top: 120px;
+	left: -40px;
+	cursor: pointer;
+	background-color: #f4432a;
+	font-size: 1.4em;
+	line-height: 50px;
+}
 
+.mapMove{
+
+	left: 300px;
+}
 
 /*** clearfix ***/
 
