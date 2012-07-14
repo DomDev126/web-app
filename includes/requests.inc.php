@@ -27,6 +27,18 @@ function make_event_location ($db, $location) {
 
 }
 
+function new_friend_check($db, $user_id){
+
+	$sql = $db->prepare(' SELECT user_id FROM friends WHERE friend_id = :user_id LIMIT 1');
+
+	$sql->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+	$sql->execute();
+	$results = $sql->fetch();
+
+	return $results;
+
+
+}
 
 function friend_check($db, $who_with) {
 

@@ -60,6 +60,7 @@
 
 				    			echo '<li>Your event was added.</li>';
 				    		}
+
 				    		if(isset($_SESSION['confirmed'])) {
 
 				    			echo '<li>Your event was confirmed.</li>';
@@ -80,6 +81,13 @@
 				    			}
 				    		}  
 
+				    		$new_friend = new_friend_check($db, $user_id);
+
+				    		$friend_info = get_username ($db, $new_friend[0]);
+							$friend_email = get_friend_email ($db, $new_friend[0]);
+
+
+							echo '<li>'.$friend_info['username'].' : '.$friend_email['email'].' has added you as a friend.</li>';	
 				    		?>
 				    	</ul>
 					</div>
@@ -88,7 +96,6 @@
 		</div>
 	</div>
 <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
 <script src="js/jquery.zweatherfeed.min.js" type="text/javascript"></script>
 <script src="js/calendar.js"></script>
 <script type="text/javascript">
