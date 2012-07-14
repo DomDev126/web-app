@@ -1,0 +1,58 @@
+﻿@charset "UTF-8";
+/*
+ * Example of zWeatherFeed Styling
+ *
+ * Version: 1.0.3
+ * (c) Copyright 2011-2012, Zazar Ltd
+ *
+ */
+
+body {
+	margin: 1em 3em;
+	font-family: Tahoma, Genevam, sans-serif;
+}
+
+form { margin-bottom: 1em; }
+
+#weather {
+	position: absolute;
+	right: -320px;
+	top:-50px;
+	border: 15px solid rgba(255,255,255, 0.2);
+
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+}
+
+.weatherFeed {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	margin: 2em 3em;
+	width: 175px;
+}
+.weatherFeed a { color: #888; }
+.weatherFeed a:hover {
+	color: #000;
+	text-decoration: none;
+}
+.weatherItem {
+	padding: 0.5em 0.6em 1.3em 0.2em;
+	text-align: right;
+}
+.weatherCity { text-transform: uppercase; }
+.weatherTemp {
+	font-size: 2.8em;
+	font-weight: bold;
+}
+.weatherDesc, .weatherCity { font-weight: bold; }
+.weatherDesc { margin-bottom: 0.2em; }
+.weatherRange, .weatherWind { font-size: 0.7em; }
+.weatherLink {
+	text-align: left;
+	font-size: 0.7em;
+}
+
+.odd { background-color: #e8e8fc; }
+.even { background-color: #d4d4e8; }

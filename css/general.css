@@ -26,14 +26,14 @@ h2 {font-size: 2.25em;}
 	font-size: 2em;
 	line-height: 100px;
 
-	background-color: #787979;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#989999), to(#787979)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(top, #989999, #787979); /* Chrome 10+, Saf5.1+, iOS 5+ */
-	background-image:    -moz-linear-gradient(top, #989999, #787979); /* FF3.6+ */
-	background-image:      -o-linear-gradient(top, #989999, #787979); /* Opera 11.10+ */
-	background-image:         linear-gradient(to bottom, #989999, #787979);
-	border-bottom: 1px solid #000;
-	border-top: 1px solid #aaa;
+	background-color: #aaa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#aaa)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #bbb, #aaa); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #bbb, #aaa); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #bbb, #aaa); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #bbb, #aaa);
+	border-bottom: 1px solid #999;
+	border-top: 1px solid #bbb;
 
 	z-index: 1000;
 }
@@ -289,8 +289,8 @@ form h2 {
 
 	line-height: 1.5;
 
-	text-shadow: 0 1px 0 #aaa,
-				0 -1px 0 #888;
+text-shadow: 0 1px 0 #d5d5d5,
+				0 -1px 0 #bbb;
 }
 
 
@@ -304,8 +304,8 @@ form h2 {
 }
 
 .panel-info > label {
-	text-shadow: 0 1px 0 #aaa,
-				0 -1px 0 #888;
+	text-shadow: 0 1px 0 #d5d5d5,
+				0 -1px 0 #bbb;
 }
 
 .go-button > button {
@@ -376,7 +376,7 @@ form h2 {
 .contentHead{
 	position: relative;
 	margin: 0 auto;
-	width: 80%;
+	width: 40%;
 	height: 60px;
 	padding: 0;
 
@@ -432,7 +432,7 @@ form h2 {
 .contentBody {
 	
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 80px;
 	width: 90%;
 	padding: 1em;
 	
@@ -553,7 +553,7 @@ form {
 	border-radius: 10px;
 
 	box-shadow: inset 1px 1px 10px #9a9a9a,
-				2px 2px 10px #fff;
+				0 0 10px #ccc;
 
 }
 
@@ -582,7 +582,7 @@ form {
 
 #map-info label {
 	margin-top: 10px;
-	color:#000;
+	color:#333;
 	text-shadow: 0 1px #dfdfdf;
 
 
@@ -776,6 +776,7 @@ thead tr th:nth-child(2n+1) {
 
 .eventTime a:hover{
 
+	background: url('../images/bg/event-bg.hover.png');
 	color: #000;
 }
 
@@ -792,7 +793,7 @@ thead tr th:nth-child(2n+1) {
 	padding: 5px;
 	margin-left: -30%;
 	left: 50%;
-	bottom: 5px;
+	bottom: 10px;
 
 	width: 50%;
 
@@ -857,6 +858,90 @@ thead tr th:nth-child(2n+1) {
 }
 
 
+/******** event ****************/
+
+#panel-location, #panel-time, #panel-friends {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-size: 0.8em;
+	text-align: center;
+
+	text-shadow: 0 1px 0 #dedede,
+				0 -1px 0 #bbb;
+
+}
+
+#panel-location + div {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 50px;
+
+	font-size: 20px;
+	width: 100%;
+
+	text-shadow: 0 1px 0 #aaa,
+				0 -1px 0 #888;
+
+}
+
+
+
+.second {
+	margin:0 auto;
+	line-height: 2.5;
+
+}
+
+.small-text{
+	margin: 0;
+	padding: 0;
+
+}
+
+.small-text > p {
+	margin: 0;
+	line-height: 2;
+
+	text-align: center;
+
+	text-shadow: none;
+}
+
+
+
+
+#panel-time:before, #panel-location:before, #panel-friends:before {
+	position: absolute;
+	display: block;
+	content:'';
+	height: 45px;
+	width: 45px;
+	top: 25px;
+
+}
+
+
+
+#panel-time:before {
+
+	background: url("../images/clips/icon-sprite.png") no-repeat left;
+	background-position: -160px 4px;
+}
+
+#panel-location:before {
+
+	background: url("../images/clips/icon-sprite.png") no-repeat left;
+	background-position: -160px -39px;
+}
+
+#panel-friends:before {
+
+	background: url("../images/clips/icon-sprite.png") no-repeat left;
+	background-position: -155px -83px;
+}
+
 
 
 /************ FRIENDS *************************/
@@ -894,8 +979,7 @@ thead tr th:nth-child(2n+1) {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	box-shadow: inset 2px 2px 1px #aaa,
-				2px 2px 10px #fff;
-
+				0 0 6px #ddd;
 
 	text-align: center;
 	color:#000;
@@ -906,6 +990,7 @@ thead tr th:nth-child(2n+1) {
 #addFriend label {
 	display: block;
 		font-size: 0.7em;
+		text-shadow: 0 1px  #eee;
 
 }
 
@@ -959,7 +1044,7 @@ thead tr th:nth-child(2n+1) {
 	z-index:100;
 	height: 40px;
 	width: 400px;
-	margin: 10px;
+	margin: 10px 10px 35px;
 
 
 	background-color: #d9d9d9;
@@ -969,8 +1054,8 @@ thead tr th:nth-child(2n+1) {
 	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
 	color: #000;
 
-	box-shadow: inset 1px 1px 10px #9a9a9a,
-				2px 2px 10px #fff;
+	box-shadow: inset 2px 2px 1px #aaa,
+				0 0 6px #ddd;
 	border:1px solid #efefef;
 
 	
@@ -1013,7 +1098,7 @@ thead tr th:nth-child(2n+1) {
 .delete {
 	position: relative;
 	z-index: 10;
-	margin-top: -20px;
+	margin-top: -45px;
 	margin-right: 20px;
 	color: #000;
 	font-size: 0.75em;
@@ -1021,90 +1106,6 @@ thead tr th:nth-child(2n+1) {
 }
 
 
-
-/******** event ****************/
-
-#panel-location, #panel-time, #panel-friends {
-	position: relative;
-	padding: 0;
-	margin: 0;
-
-
-	font-size: 0.8em;
-	text-align: center;
-
-	text-shadow: 0 1px 0 #aaa,
-				0 -1px 0 #888;
-
-}
-
-#panel-location + div {
-	position: absolute;
-	padding: 0;
-	margin: 0;
-	top: 50px;
-
-	font-size: 20px;
-	width: 100%;
-
-	text-shadow: 0 1px 0 #aaa,
-				0 -1px 0 #888;
-
-}
-
-
-
-.second {
-	margin:0 auto;
-	line-height: 2.5;
-
-}
-
-.small-text{
-	margin: 0;
-	padding: 0;
-
-}
-
-.small-text > p {
-	margin: 0;
-	line-height: 2;
-
-	text-align: center;
-}
-
-
-
-
-#panel-time:before, #panel-location:before, #panel-friends:before {
-	position: absolute;
-	display: block;
-	content:'';
-	height: 45px;
-	width: 45px;
-	top: 25px;
-
-}
-
-
-
-#panel-time:before {
-
-	background: url("../images/clips/icon-sprite.png") no-repeat left;
-	background-position: -160px 4px;
-}
-
-#panel-location:before {
-
-	background: url("../images/clips/icon-sprite.png") no-repeat left;
-	background-position: -160px -39px;
-}
-
-#panel-friends:before {
-
-	background: url("../images/clips/icon-sprite.png") no-repeat left;
-	background-position: -155px -83px;
-}
 
 
 

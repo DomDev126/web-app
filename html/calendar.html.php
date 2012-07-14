@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Calendar &middot; I Have Plans</title>
 	<link href="css/general.css" rel="stylesheet">
+	<link href="css/jquery.zweatherfeed.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">	
@@ -26,9 +27,12 @@
 		</div>
 		<div class="content-container">
 			<div class="eventAdd">
+
 				<header class="contentHead">
 					<h1><?php echo date('F d');?> - <?php echo date("F d", mktime(0, 0, 0, date("m"), date("d")+4));?></h1>
+					<div id="weather"></div>
 				</header>
+				
 				<div class="contentBody">
 					<div class="calendarBody clearfix">
 						<table>
@@ -81,11 +85,15 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="js/jquery.zweatherfeed.min.js" type="text/javascript"></script>
 <script src="js/calendar.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () { $('#weather').weatherfeed(['CAXX0343']);});
+</script>
 </body>
 </html>
 

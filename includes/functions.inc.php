@@ -41,7 +41,7 @@ function image_resize_move ($file_tmp, $photo_name) {
 		$tmp = $crop_tmp;
 	}
 
-	$image_name = "images/user-images/".$filename;
+	$image_name = USER_IMAGE_PATH.$filename;
 
 
 

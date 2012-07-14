@@ -30,7 +30,6 @@
 								
 								$displayed_user = get_username_single($db, $users['user_id'] );
 
-
 								if($counter>0) {
 									echo ', '.ucfirst($displayed_user['username']);
 								}else {

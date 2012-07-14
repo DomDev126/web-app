@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'includes/db.inc.php';
 require_once 'includes/users.inc.php';
 require_once 'includes/requests.inc.php';
@@ -34,10 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if (empty($location)) {
 		$errors['location'] = true;
 	}
+/*
+	$event_check = check_event_exists( $db, );
+
+
+	if() {
+
+
+	}*/
 
 
 	if (empty($errors)) {
-
 
 		$location_id = make_event_location ($db, $location);
 		$event_id = make_event($db, $location_id, $title, $event_from, $event_to, $event_date);
@@ -50,8 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			$has_friends = friend_check( $db, $who_with );
 		 	make_user_event($db, $has_friends, $event_id, $confirmed = 0);
-
-		 	
 			
 		}
 
@@ -63,6 +67,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $user_info = get_username ($db, $user_id);
 
 include "html/add-event.html.php"
-
 
 ?>
