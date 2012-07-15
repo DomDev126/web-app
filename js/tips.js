@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 	tips.slideToggle('slow', function() {
 
-		setTimeout(slideUp, 4000)
+		setTimeout(slideUp, 3500)
 	})
 	
 	function slideUp() {
