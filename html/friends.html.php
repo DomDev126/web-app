@@ -37,15 +37,19 @@
 							<?php 
 
 							$friend_ids = get_friend_ids($db, $user_id);
-
+							
 							foreach($friend_ids as $friends) {
 
-							$current_friend = intval($friends['friend_id']);
-				
-							$friend_info = get_username ($db, $current_friend);
-							$friend_email = get_friend_email ($db, $current_friend);
-							
-							echo '<li class="friendHolder"><div><img src="'.USER_IMAGE_PATH.$friend_info['photo'].'" alt=""></div><span>'.$friend_info['username'].'  (  '.$friend_email['email'].' )</span></li><a class="bottomLink delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
+								if($friends[0] !== $user_id){
+
+									$current_friend = intval($friends['friend_id']);
+						
+									$friend_info = get_username ($db, $current_friend);
+									$friend_email = get_friend_email ($db, $current_friend);
+									
+									echo '<li class="friendHolder"><div><img src="'.USER_IMAGE_PATH.$friend_info['photo'].'" alt=""></div><span>'.$friend_info['username'].'  (  '.$friend_email['email'].' )</span></li><a class="bottomLink delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
+							 	}
+
 							 }; ?>
 						</ul>
 						<form id="addFriend" method="post" action="friends.php">

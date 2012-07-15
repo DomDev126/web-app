@@ -71,23 +71,30 @@
 
 							//check to see if there are any events to confirm
 				    		$notifications = check_notification($db, $user_id);
-							$notified = array();
+							
 
 							foreach ($notifications as $notify) {
 							
 				    			if($notify['confirmed'] == 0 ){
 
-				    				echo '<li><a href="event.php?id='.$notify[1].'">You have an event to confirm</a></li>';		
+				    				echo '<li><a href="event.php?id='.$notify[1].'">You have an event to confirm.</a></li>';		
 				    			}
 				    		}  
 
-				    		$new_friend = new_friend_check($db, $user_id);
+				    		$new_friends = new_friend_check($db, $user_id);
 
-				    		$friend_info = get_username ($db, $new_friend[0]);
-							$friend_email = get_friend_email ($db, $new_friend[0]);
+				    		foreach($new_friends as $friend){
 
 
-							echo '<li>'.$friend_info['username'].' : '.$friend_email['email'].' has added you as a friend.</li>';	
+				    			$friend_info = get_username ($db, $friend[0]);
+				    			$friend_email = get_friend_email ($db, $friend[0]);
+
+				    		echo '<li>'.$friend_info['username'].' : '.$friend_email['email'].' has indicated that you are a friend. <a href="confirm-friend.php?id='.$friend['friend_id'].'">Confirm </a></li>';
+
+
+
+				    		}
+							
 				    		?>
 				    	</ul>
 					</div>

@@ -847,7 +847,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 .notificationsList {
-
+	padding: 1em;
 	list-style: none;
 
 	background-color: #d9d9d9;
@@ -1116,8 +1116,8 @@ thead tr th:nth-child(2n+1) {
 .googleMapCanvas{
 	padding: 0 2em;
 	position: absolute;
-	top: 370px;
-	left: 625px;
+	top: 90px;
+	left:-15px;
 
 }
 
@@ -1128,8 +1128,8 @@ thead tr th:nth-child(2n+1) {
 	height: 50px;
 	width: 100px;
 	top: 120px;
-	left: -40px;
-	cursor: pointer;
+	left: -45px;
+	cursor: hand;
 	background-color: #f4432a;
 	font-size: 1.4em;
 	line-height: 50px;
@@ -1137,7 +1137,7 @@ thead tr th:nth-child(2n+1) {
 
 .mapMove{
 
-	left: 300px;
+	left: -325px;
 }
 
 /*** clearfix ***/

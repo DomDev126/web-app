@@ -29,14 +29,29 @@ function make_event_location ($db, $location) {
 
 function new_friend_check($db, $user_id){
 
-	$sql = $db->prepare(' SELECT user_id FROM friends WHERE friend_id = :user_id LIMIT 1');
+	$sql = $db->prepare(' SELECT user_id, friend_id FROM friends WHERE friend_id = :user_id AND confirmed_friends = 0');
 
 	$sql->bindValue(':user_id', $user_id, PDO::PARAM_STR);
 	$sql->execute();
-	$results = $sql->fetch();
+	$results = $sql->fetchAll();
 
 	return $results;
 
+
+}
+
+function confirm_friends($db, $user_id, $friend_id){
+
+	$sql = $db->prepare(' UPDATE friends SET confirmed_friends = 1 WHERE user_id = :user_id AND friend_id = :friend_id
+		');
+
+	$sql->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+	$sql->bindValue(':friend_id', $friend_id, PDO::PARAM_STR);
+	$sql->execute();
+
+	$success = "Added friend";
+
+	return $success;
 
 }
 
@@ -142,12 +157,13 @@ function delete_event ($db, $user_id, $event_id){
 
 }
 
-function add_friend_id ($db, $user_id, $friend_id) {
+function add_friend_id ($db, $user_id, $friend_id, $confirmation) {
 	
-	$sql= $db->prepare(' INSERT INTO friends (user_id, friend_id) VALUES (:user_id, :friend_id) '); 
+	$sql= $db->prepare(' INSERT INTO friends (user_id, friend_id, confirmed_friends) VALUES (:user_id, :friend_id, :confirmed_friends) '); 
 
 	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 	$sql->bindValue(':friend_id', $friend_id, PDO::PARAM_INT);
+	$sql->bindValue(':confirmed_friends', $confirmation, PDO::PARAM_INT);
 	$sql->execute();
 
 
@@ -156,13 +172,16 @@ function add_friend_id ($db, $user_id, $friend_id) {
 function get_friend_ids ($db, $user_id) {
 
 $sql = $db->prepare('
-	SELECT friend_id
-	FROM friends
-	WHERE user_id = :user_id
-
+		SELECT friend_id, user_id
+		FROM friends
+		WHERE confirmed_friends = 1
+		AND (user_id = :user_id or friend_id = :user_id)
+	
 ');
 $sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 $sql->execute();
+
+
 
 $results = $sql->fetchAll();
 

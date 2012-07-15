@@ -35,7 +35,7 @@ $errors = array();
 		$friendAlready = check_friend_id ($db, $user_id, $friend_id);
 		if(!$friendAlready && $friend_id !== $user_id){
 
-		add_friend_id ($db, $user_id, $friend_id);
+		add_friend_id ($db, $user_id, $friend_id, 0);
 		
 		header('Location: friends.php');
 		exit;
