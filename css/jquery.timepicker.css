@@ -34,6 +34,7 @@
 	list-style: none;
 	margin: 0;
 	left: 0;
+	text-shadow: none;
 }
 
 .ui-timepicker-list:hover .ui-timepicker-selected {

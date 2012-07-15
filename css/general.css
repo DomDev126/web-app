@@ -65,7 +65,10 @@ h2 {font-size: 2.25em;}
 	color:#fff;
 }
 
-
+::selection {
+text-shadow: none;
+color: red;
+}
 
 
 /********** HEADER ***************/
@@ -709,7 +712,7 @@ form {
 	right: -285px;
 
 	font-size: 13px;
-	color: #fff;
+	color: #000;
 
 
 }
@@ -863,11 +866,6 @@ thead tr th:nth-child(2n+1) {
 		border-radius: 30px;
 
 	font-size: 0.8em;
-
-
-
-
-
 
 }
 

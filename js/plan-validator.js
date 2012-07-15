@@ -43,6 +43,8 @@ $(document).ready(function () {
 			startResult = parseInt(startTime),
 			endResult = parseInt(endTime);
 
+			console.log(endResult);
+
 		if (convertedStartTime == "pm") {
 			startResult +=12;
 		}
@@ -50,6 +52,14 @@ $(document).ready(function () {
 		if (convertedEndTime == "pm"){
 			endResult +=12;
 		}
+
+		if(startTime == "12:00pm" || startTime == "12:30pm" ){
+
+			startResult = "12";
+
+		}
+
+		console.log(endResult);
 
 		if(startResult >= endResult) {
 			formOptions.addClass('bad-date');
