@@ -540,6 +540,7 @@ form {
 }
 .form-input input{
 	margin: 5px 0;
+	padding: 0 5px;
 	width: 350px;
 	height: 30px;
 	float: right;
@@ -687,12 +688,16 @@ form {
 }
 
 #datepicker {
-	margin-left: -10px;
+	margin-left: -20px;
+	padding: 0 5px;
 	width: 150px;
 
 
 }
-
+#start, #end{
+	padding: 0 5px;
+	width: 73px;
+}
 .good {
 
 	background-color: #ddf7d5;
