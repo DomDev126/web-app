@@ -32,12 +32,13 @@
 					<p><a href="calendar.php">Back to Calendar</a></p>
 				</header>
 				<div class="contentBody">
+					<div class="tips"><p>Save yourself the rejection, only add 'real' friends. This isn't facebook.</p></div>
 					<div class="friendBody clearfix">
 						<ul class="friendsUl">
 							<?php 
 
 							$friend_ids = get_friend_ids($db, $user_id);
-							
+
 							foreach($friend_ids as $friends) {
 
 								if($friends[0] !== $user_id){
@@ -63,5 +64,7 @@
 			</div>
 		</div>
 	</div>
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="js/tips.js"></script>
 <body>
 </html>

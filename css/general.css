@@ -622,15 +622,21 @@ form {
 	right:10px;
 
 	background-color: #f54020;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#f54020), to(#f4391c)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(top, #f54020, #f4391c); /* Chrome 10+, Saf5.1+, iOS 5+ */
-	background-image:    -moz-linear-gradient(top, #f54020, #f4391c); /* FF3.6+ */
-	background-image:      -o-linear-gradient(top, #f54020, #f4391c); /* Opera 11.10+ */
-	background-image:         linear-gradient(to bottom, #f54020, #f4391c);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f54020), to(#f54e31)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #f54020, #f54e31); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #f54020, #f54e31); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #f54020, #f54e31); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #f54020, #f54e31);
+	
 
 	border: 2px solid #f4371c;
+	border-bottom: 1px solid #c31d00;
+	border-top: none;
+
+
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+	cursor:pointer;
 
 	font-size: 2.5em;
 	color: #fff;
@@ -835,14 +841,23 @@ thead tr th:nth-child(2n+1) {
 
 .notifications {
 	margin-top: 20px;
-	padding: 0.25em ;
+	padding: 0.5em ;
 	background-color: #fff;
 
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 
+		text-shadow: 0 1px 1px #ddd,
+				 0 -1px 1px #fff;
+
 	background: url("../images/bg/friends-bg.png");
 
+
+}
+
+.notifications h3 {
+	margin: 0;
+	padding-left: 20px;
 
 }
 
@@ -1101,6 +1116,32 @@ thead tr th:nth-child(2n+1) {
 
 }
 
+.tips {
+	text-align: center;
+	font-size: 2em;
+	color: #000;
+
+		background-color: #d9d9d9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #d9d9d9, #c0c0c0); /* Chrome 10+, Saf5.1+, iOS 5+ */ background-image:    -moz-linear-gradient(top, #d9d9d9, #c0c0c0); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #d9d9d9, #c0c0c0); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
+
+
+	text-shadow: 0 1px #eee;
+
+	
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+
+}
+.tips p {
+
+	padding:0;
+	margin: 0;
+}
+
 .delete {
 	position: relative;
 	z-index: 10;
@@ -1119,6 +1160,7 @@ thead tr th:nth-child(2n+1) {
 	top: 90px;
 	left:-15px;
 
+
 }
 
 .googleMapCanvas:before{
@@ -1131,7 +1173,7 @@ thead tr th:nth-child(2n+1) {
 	left: -45px;
 	cursor: hand;
 	background-color: #f4432a;
-	font-size: 1.4em;
+	font-size: 2.2em;
 	line-height: 50px;
 }
 
