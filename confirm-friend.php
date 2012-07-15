@@ -9,6 +9,9 @@ $friend_id = filter_input(INPUT_GET, 'id' , FILTER_SANITIZE_STRING);
 
 $user_id = $_SESSION['user-id'];
 
+var_dump($friend_id);
+var_dump($user_id);
+
 
 confirm_friends($db, $friend_id, $user_id);
 add_friend_id ($db, $user_id, $friend_id, 1);

@@ -89,7 +89,7 @@
 				    			$friend_info = get_username ($db, $friend[0]);
 				    			$friend_email = get_friend_email ($db, $friend[0]);
 
-				    		echo '<li>'.$friend_info['username'].' : '.$friend_email['email'].' has indicated that you are a friend. <a href="confirm-friend.php?id='.$friend['friend_id'].'">Confirm </a></li>';
+				    		echo '<li>'.$friend_info['username'].' : '.$friend_email['email'].' has indicated that you are a friend. <a href="confirm-friend.php?id='.$friend['user_id'].'">Confirm </a></li>';
 
 
 
