@@ -77,6 +77,20 @@ function friend_email_check($db, $email) {
 	return $results['id'];
 }
 
+function get_users_by_name($db) {
+
+	$sql = $db->prepare(' SELECT username, email FROM users ');
+
+	//$sql->bindValue(':letter', $letter."%", PDO::PARAM_STR);
+	$sql->execute();
+	$results = $sql->fetchAll();
+
+	return $results;
+
+
+}
+
+
 function get_username ($db, $id){
 
 	$sql = $db->prepare('SELECT username, photo FROM users WHERE id = :id');

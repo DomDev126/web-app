@@ -1005,13 +1005,22 @@ thead tr th:nth-child(2n+1) {
 
 /************ FRIENDS *************************/
 
+.boxLeft {
+	float: left;
+	min-width: 480px;
+	min-height: 200px;
+
+}
+
+
+
 .friendBody {
 	min-height: 400px;
 
 }
 
 .friendsUl {
-	float: left;
+
 	margin:0;
 	padding: 0;
 	padding-right: 40px;
@@ -1024,9 +1033,38 @@ thead tr th:nth-child(2n+1) {
 }
 
 
+
+.boxRight {
+	float:left;
+	margin-left: 75px;
+	margin-top: 10px;
+
+}
+
+
+.userCheck {
+	float: right;
+	padding: 1em;
+	margin-right: 15px;
+	width: 355px;
+	background-color: red;
+
+	background-color: #d9d9d9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #d9d9d9, #c0c0c0); /* Chrome 10+, Saf5.1+, iOS 5+ */ background-image:    -moz-linear-gradient(top, #d9d9d9, #c0c0c0); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #d9d9d9, #c0c0c0); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
+
+	border:1px solid #efefef;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: inset 2px 2px 1px #aaa,
+				0 0 6px #ddd;
+
+}
+
 #addFriend{
 	position: relative;
-	float:right;
 	padding: 0.5em 1em 1em;
 	height: 90px;
 	background-color: #d9d9d9;

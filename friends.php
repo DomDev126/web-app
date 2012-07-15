@@ -12,7 +12,8 @@ if (!user_is_signed_in()) {
 
 $_SESSION['visited'] = true;
 
-$email= filter_input(INPUT_POST, 'addEmail', FILTER_SANITIZE_STRING);
+$raw_email= filter_input(INPUT_POST, 'addEmail', FILTER_SANITIZE_STRING);
+
 
 $user_id = ($_SESSION['user-id']);
 
@@ -22,7 +23,11 @@ $user_info = get_username ($db, $user_id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-$errors = array();
+	preg_match('/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i', $raw_email, $matches);
+
+	$email = $matches[0];
+
+	$errors = array();
 
 	if(isset($email)) {
 		$friend_id =  friend_email_check($db, $email);
@@ -46,9 +51,12 @@ $errors = array();
 	
 		}
 	}
+
+
+
+
 }
 
-include "html/friends.html.php"
-
+include "html/friends.html.php";
 
 ?>

@@ -40,17 +40,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$errors['email'] = true;
 	}
 
-	if (isset($_FILES['photo']['name'])) {
-		
-		$photo_name = stripslashes($_FILES['photo']['name']);
-
-	}else{
-
-		$photo = 0;
-		
-	}
+	
 
 	if (empty($errors)) {
+
+		if ($_FILES['photo']['name'] == "") {
+			
+			$photo_name = "nopic.jpg";
+
+		}else{
+
+			$photo_name = stripslashes($_FILES['photo']['name']);
+
+		}
 		
 		// create the user
 		$id = user_create($db, $username, $password, $email, $photo_name);

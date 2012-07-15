@@ -34,43 +34,47 @@
 				<div class="contentBody">
 					<div class="tips"><p>TIP : Save yourself the rejection, only add 'real' friends. This isn't facebook.</p></div>
 					<div class="friendBody clearfix">
-						<ul class="friendsUl">
-							<?php 
+						<div class="boxLeft">
+							<ul class="friendsUl">
+								<?php 
 
-							$friend_ids = get_friend_ids($db, $user_id);
+								$friend_ids = get_friend_ids($db, $user_id);
 
-							foreach($friend_ids as $friends) {
+								foreach($friend_ids as $friends) {
 
-								if($friends[0] !== $user_id){
+									if($friends[0] !== $user_id){
 
-									$current_friend = intval($friends['friend_id']);
-						
-									$friend_info = get_username ($db, $current_friend);
-									$friend_email = get_friend_email ($db, $current_friend);
-									
-									echo '<li class="friendHolder"><div><img src="'.USER_IMAGE_PATH.$friend_info['photo'].'" alt=""></div><span>'.$friend_info['username'].'  (  '.$friend_email['email'].' )</span></li><a class="bottomLink delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
-							 	}
-
-							 }; ?>
-						</ul>
-						<form id="addFriend" method="post" action="friends.php">
-							<label for="addFriend">Add one of your friends</label>
-							<input id="addEmail" name="addEmail" placeholder="ie. steve@partypooper.com" value="">
-							<button id="addBtn" type="submit">Add</button>
-							<?php if (isset($errors['no-user'])) { echo ('<em>No such user/email exists</em>');} ?>
+										$current_friend = intval($friends['friend_id']);
 							
-							<?php if(isset($_SESSION['friend-request'])) { echo '<p class="request">friend request send</p>'; unset($_SESSION['friend-request']); }?>
-					
-						</form>
+										$friend_info = get_username ($db, $current_friend);
+										$friend_email = get_friend_email ($db, $current_friend);
+										
+										echo '<li class="friendHolder"><div><img src="'.USER_IMAGE_PATH.$friend_info['photo'].'" alt=""></div><span>'.$friend_info['username'].'  (  '.$friend_email['email'].' )</span></li><a class="bottomLink delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
+								 	}
 
+								 }; ?>
+							</ul>
+						</div>
+						<div class="boxRight">
+							<form id="addFriend" method="post" action="friends.php">
+								<label for="addFriend">Add one of your friends</label>
+								<input id="addEmail" name="addEmail" placeholder="ie. steve@partypooper.com" value="">
+								<button id="addBtn" type="submit">Add</button>
+								<?php if (isset($errors['no-user'])) { echo ('<em>No such user/email exists</em>');} ?>
+								
+								<?php if(isset($_SESSION['friend-request'])) { echo '<p class="request">friend request send</p>'; unset($_SESSION['friend-request']); }?>
+								
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+<link type="text/css" href="css/custom-theme/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
 <script src="js/tips.js"></script>
-
 
 <body>
 </html>
