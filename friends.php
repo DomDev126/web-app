@@ -10,13 +10,15 @@ if (!user_is_signed_in()) {
 	exit;
 }
 
-
+$_SESSION['visited'] = true;
 
 $email= filter_input(INPUT_POST, 'addEmail', FILTER_SANITIZE_STRING);
 
 $user_id = ($_SESSION['user-id']);
 
 $user_info = get_username ($db, $user_id);
+
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -36,6 +38,8 @@ $errors = array();
 		if(!$friendAlready && $friend_id !== $user_id){
 
 		add_friend_id ($db, $user_id, $friend_id, 0);
+
+		$_SESSION['friend-request'] = true;
 		
 		header('Location: friends.php');
 		exit;

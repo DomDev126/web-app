@@ -32,7 +32,7 @@
 					<p><a href="calendar.php">Back to Calendar</a></p>
 				</header>
 				<div class="contentBody">
-					<div class="tips"><p>Save yourself the rejection, only add 'real' friends. This isn't facebook.</p></div>
+					<div class="tips"><p>TIP : Save yourself the rejection, only add 'real' friends. This isn't facebook.</p></div>
 					<div class="friendBody clearfix">
 						<ul class="friendsUl">
 							<?php 
@@ -58,7 +58,11 @@
 							<input id="addEmail" name="addEmail" placeholder="ie. steve@partypooper.com" value="">
 							<button id="addBtn" type="submit">Add</button>
 							<?php if (isset($errors['no-user'])) { echo ('<em>No such user/email exists</em>');} ?>
+							
+							<?php if(isset($_SESSION['friend-request'])) { echo '<p class="request">friend request send</p>'; unset($_SESSION['friend-request']); }?>
+					
 						</form>
+
 					</div>
 				</div>
 			</div>
@@ -66,5 +70,7 @@
 	</div>
 <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="js/tips.js"></script>
+
+
 <body>
 </html>
