@@ -1,5 +1,39 @@
 $(document).ready(function () {
-var tips = $('.tips').hide();
+	
+
+
+	var Users = {
+
+		getUsers: function (config) {
+	 		self = Users;
+	 		this.config = config;
+	 		
+		 	$.ajax({
+				url: "check-friends.php",
+				type: "POST",
+				dataType: "json",
+				data: self.config.formInput.serialize(),
+				success: function ( results ) {
+
+					self.config.formInput.autocomplete({
+			
+					source: results
+
+					});
+				}
+
+			})
+		}
+	}
+
+	Users.getUsers({
+
+		formInput: $('#addEmail')
+
+	});
+
+
+	var tips = $('.tips').hide();
 	
 	if(tipsInitialize == true) {
 			
@@ -20,35 +54,5 @@ var tips = $('.tips').hide();
 	}	
 
 
-
-	var Users = {
-
-		getUsers: function (config) {
-	 		self = Users;
-	 		this.config = config;
-	 		
-		 	$.ajax({
-				url: "check-friends.php",
-				type: "POST",
-				dataType: "json",
-				data: self.config.formInput.serialize(),
-				success: function ( results ) {
-
-					self.config.formInput.autocomplete({
-				
-					source: results
-
-					});
-				}
-
-			})
-		}
-	}
-
-	Users.getUsers({
-
-		formInput: $('#addEmail')
-
-	});
 
 });
