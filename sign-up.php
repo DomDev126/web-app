@@ -37,7 +37,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	}
 
-	if ( $email.length < 2 || $email.length > 50 ) {
+	if ( strlen($email) < 2 || strlen($email) > 50 ) {
 
 		$errors['email'] = true;
 

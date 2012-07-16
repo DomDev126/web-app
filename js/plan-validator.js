@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 	$('#title').on('change', function (ev) {
 		
-		var eventTitle = $('#title').val();
+		var eventTitle = $(this).val();
 
 		if( eventTitle.length < 3 || eventTitle.length > 100 ) {
 			
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 	$('#datepicker').on('change', function (ev) {
 		
-		var chosenDate = $('#datepicker').val(),
+		var chosenDate = $(this).val(),
 			currentDate = new Date(getCurrentDate()),
 			eventDate = new Date(chosenDate);
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 	$('#end').on('change', function (ev) {
 		var startTime = $('#start').val();
-			endTime = $('#end').val(),
+			endTime = $(this).val(),
 			formOptions = $(".form-options"),
 			convertedStartTime = startTime.match('[a-z]{2}'),
 			convertedEndTime = endTime.match('[a-z]{2}'),
@@ -76,6 +76,24 @@ $(document).ready(function () {
 		}
 
 	});
+
+
+	$('#location').on('change', function() {
+
+		var eventLoc = $(this).val();
+
+		if( eventLoc.length < 3 || eventLoc.length > 100 ) {
+			
+			$(this).addClass('error');
+
+		} else {
+
+			$(this).removeClass('error');
+		}
+
+
+	});
+
 	
 
 	function getCurrentDate(){
