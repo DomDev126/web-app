@@ -9,7 +9,7 @@ $sql = $db->prepare('
 	FROM users
 	WHERE email = :email
 
-	');
+');
 
 $sql->bindValue(':email', $email, PDO::PARAM_STR);
 $sql->execute();

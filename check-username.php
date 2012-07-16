@@ -9,12 +9,11 @@ $sql = $db->prepare('
 	FROM users
 	WHERE username = :username
 
-	');
+');
 
 $sql->bindValue(':username', $username, PDO::PARAM_STR);
 $sql->execute();
 $results = $sql->fetch();
-
 
 if(empty($results)) {
 

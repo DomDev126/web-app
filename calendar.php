@@ -14,8 +14,6 @@ $user_id = $_SESSION['user-id'];
 $user_info = get_username ($db, $user_id);
 $event_array = check_schedule($db,$user_id);
 
-
 include "html/calendar.html.php"
-
 
 ?>

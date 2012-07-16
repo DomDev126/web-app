@@ -5,18 +5,15 @@ require_once 'includes/users.inc.php';
 require_once 'includes/requests.inc.php';
 require_once 'includes/functions.inc.php';
 
+$json_users = get_users_by_name( $db );
 
+$userObjectArray = array();
 
-		$json_users = get_users_by_name($db);
+foreach( $json_users as $users ) {
 
-		$userObjectArray = array();
+	$userObject = ucFirst($users['username'].' : '.$users['email']);
+	$userObjectArray[] = $userObject;
 
-		foreach($json_users as $users) {
+}
 
-			$userObject = ucFirst($users['username'].' : '.$users['email']);
-			$userObjectArray[] = $userObject;
-
-		}
-
-	
-		echo (json_encode($userObjectArray));
+echo (json_encode( $userObjectArray ));

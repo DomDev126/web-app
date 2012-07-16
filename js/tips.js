@@ -5,6 +5,7 @@ $(document).ready(function () {
 	tips.slideToggle('slow', function() {
 
 		setTimeout(slideUp, 3500)
+
 	})
 	
 	function slideUp() {
@@ -14,77 +15,34 @@ $(document).ready(function () {
 	}
 
 
+	var Users = {
 
+		getUsers: function (config) {
+	 		self = Users;
+	 		this.config = config;
+	 		
+		 	$.ajax({
+				url: "check-friends.php",
+				type: "POST",
+				dataType: "json",
+				data: self.config.formInput.serialize(),
+				success: function ( results ) {
 
-var Users = {
-
-	
-	init: function ( config ) {
-
-		this.config = config;
-		this.bindEvents();
-	},
-	bindEvents: function () {
-		this.config.formInput.on('keyup', this.fetchUsers);
-
-
-
-	},
-
-	fetchUsers: function () {
-		var self= Users;
-
-
-		$.ajax({
-			url: "check-friends.php",
-			type: "POST",
-			dataType: "json",
-			data: self.config.formInput.serialize(),
-			success: function (results) {
+					self.config.formInput.autocomplete({
 				
-				 availableUsers = results;
-				//return this.availableUsers;
+					source: results
 
-				$( "#addEmail" ).autocomplete({
-			
-				source: availableUsers
-		
-		
+					});
+				}
 
-				});
-
-
-			}
-
-		});
-
-
-	},
-
-
-
-	autoComplete: function() {
-	
-		
-		
-
-		
-	
+			})
+		}
 	}
 
+	Users.getUsers({
 
-
-}
-
-	Users.init({
-
-		formInput: $('#addEmail'),
-		userListArea: $('#userList'),
-		
-
+		formInput: $('#addEmail')
 
 	});
-
-
 
 });

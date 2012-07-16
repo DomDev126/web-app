@@ -2,14 +2,17 @@
 
 header, footer, nav, aside, article, section {display: block;}
 
-body{
+body {
+
 	margin: 0;padding: 0;
 	background: #000 url('../images/bg/loginbg.jpg') no-repeat top fixed;
 	background-color #000;
 	font: normal 100%/1.5 arial, sans-serif;
+
 }
 
 .container {
+
 	margin: 0 auto;
 	padding: 0;
 	width: 1400px;
@@ -19,6 +22,7 @@ h1 {font-size: 2.5em;}
 h2 {font-size: 2.25em;}
 
 .panel {
+
 	position:relative;
 	height: 100px;
 	width: 100%;
@@ -40,17 +44,20 @@ h2 {font-size: 2.25em;}
 
 
 .panel input {
+
 	margin: 1.3em 1em 1em;
 	float: right;
 
 }
 .panel-info {
+
 	position: relative;
 	margin: 0 auto;
 	width: 90%;
 }
 
 .sign-out {
+
 	margin: 0 ;
 	padding:3px 5px 3px 0;
 	width: 100%;
@@ -66,8 +73,8 @@ h2 {font-size: 2.25em;}
 }
 
 ::selection {
-text-shadow: none;
-color: red;
+	text-shadow: none;
+	color: red;
 }
 
 
@@ -82,11 +89,13 @@ color: red;
 }
 
 .header-container {
+
 	float: left;
 
 }
 
 .content-container {
+
 	float: left;
 	width: 80%;
 
@@ -94,6 +103,7 @@ color: red;
 }
 
 .mainHead {
+
 	margin: 0;
 
 	width: 250px;
@@ -104,6 +114,7 @@ color: red;
 }
 
 .mainHead figure {
+
 	margin:0;
 	padding: 0;
 	height: 230px;
@@ -111,6 +122,7 @@ color: red;
 }
 
 .mainHead img {
+
 	margin: 25px 0 0 25px;
 	padding: 0;
 	width: 100%;
@@ -137,13 +149,12 @@ color: red;
 	border:1px solid #efefef;
 	text-shadow: 0 1px 0 #ddd;
 
-
-
 	line-height: 32px;
 
 }
 
 .mainHead nav ul {
+
 	margin: 0;
 	margin-top: 20px;
 	padding: 0;
@@ -151,6 +162,7 @@ color: red;
 
 }
 .mainHead nav li {
+
 	margin: 0; 
 	padding: 1.5em;
 	position: relative;
@@ -164,9 +176,11 @@ color: red;
 	
 	border-bottom: 1px solid #c31d00;
 	border-top: 1px solid #f46b59;
+
 }
 
 .mainHead li a{
+
 	padding: 1em;
 	padding-left: 0.2em;
 	color: #fff;
@@ -179,26 +193,32 @@ color: red;
 }
 
 #friends a:after, #friends a:hover:after  {
+
 	position:absolute;
 	content: "";
 	height: 40px;
 	width: 40px;
 	right: 30px;
 	top: 30%;
+
 }
 
 #friends a:after {
+
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
 	background-position: 0 0;
+
 }
 
 #friends a:hover:after {
+
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
 	background-position: -43px 0;
 
 }
 
 #plans a:after, #plans a:hover:after {
+
 	position:absolute;
 	content: "";
 	height: 40px;
@@ -209,13 +229,17 @@ color: red;
 }
 
 #plans a:after {
+
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
 	background-position: 0 -40px
+
 }
 
 #plans a:hover:after {
+
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
 	background-position: -43px -40px;
+
 }
 
 
@@ -226,11 +250,11 @@ color: red;
 /************ LoginBox *************/
 
 .login-box {
+
 	position: relative;
 	margin: 20% auto;
 	padding-bottom: 25px;
  	width: 600px;
-
 
  	font-size: 0.6em;
 
@@ -238,19 +262,20 @@ color: red;
  	border-radius: 10px;
  	box-shadow: 0 0 10px #777;
  }
+
 .login-box h2 {
 
 	font-size: 2em;
 }
+
 .login-box a{
 
 	color: #000;
 }
-/*.login-box a:hover {
-	color: #eee;
-}*/
+
 
 form h2 {
+
 	position: relative;
  	margin: 0 auto 20px;
  	padding: 0.5em;
@@ -268,6 +293,7 @@ form h2 {
  }
 
  form h2:before {
+
  	position: absolute;
  	content:"";
  	display: inline-block;
@@ -292,11 +318,9 @@ form h2 {
 
 	line-height: 1.5;
 
-text-shadow: 0 1px 0 #d5d5d5,
+	text-shadow: 0 1px 0 #d5d5d5,
 				0 -1px 0 #bbb;
 }
-
-
 
 .panel-info > input {
 
@@ -304,9 +328,11 @@ text-shadow: 0 1px 0 #d5d5d5,
 	height: 35px;
 	padding: 2px 1px;
 	font-size: 0.6em;
+
 }
 
 .panel-info > label {
+
 	text-shadow: 0 1px 0 #d5d5d5,
 				0 -1px 0 #bbb;
 }
@@ -331,12 +357,10 @@ text-shadow: 0 1px 0 #d5d5d5,
 	width: 150px;
 	right: -150px;
 
-
 }
 
-
-
 .bottomLink {
+
 	position: relative;
 	z-index:10;
 	float: right;
@@ -369,11 +393,10 @@ text-shadow: 0 1px 0 #d5d5d5,
 	text-shadow: 0 1px 1px #fff;
 	font-size:0.8em;
 
-	
-
 }
 
 .request{
+
 	position: absolute;
 	padding: 5px 10px;
 
@@ -408,13 +431,13 @@ text-shadow: 0 1px 0 #d5d5d5,
 
 	z-index: 1;
 
-
 }
 
 
 /************ Add Event *************/
 
-.contentHead{
+.contentHead {
+
 	position: relative;
 	margin: 0 auto;
 	width: 40%;
@@ -428,6 +451,7 @@ text-shadow: 0 1px 0 #d5d5d5,
 	border: 1px solid #ddd;
 	text-align: center;
 	text-shadow: 0 2px 0 #fff;
+
 }
 
 .extended {
@@ -436,6 +460,7 @@ text-shadow: 0 1px 0 #d5d5d5,
 }
 
 .contentHead h1{
+
 	margin:0;
 	color:#000;
 
@@ -444,6 +469,7 @@ text-shadow: 0 1px 0 #d5d5d5,
 }
 
 .contentHead p {
+
 	position: absolute;
 	padding: 0.5em;
 	margin-top: 9px;
@@ -464,9 +490,11 @@ text-shadow: 0 1px 0 #d5d5d5,
 	border-radius: 10px;
 
 	border: 1px solid #cfced4;
+
 }
 
-.contentHead p a{
+.contentHead p a {
+
 	padding: 10px 5px;
 	text-decoration: none;
 	font-size: 0.95em;
@@ -488,8 +516,6 @@ text-shadow: 0 1px 0 #d5d5d5,
 	
 	background-color: rgba(250,250,250,0.1);
 
-
-
 }
 
 .eventBody, .friendBody, .calendarBody {
@@ -501,10 +527,8 @@ text-shadow: 0 1px 0 #d5d5d5,
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 
-font-weight: bold;
-
+	font-weight: bold;
 	text-shadow: 0 2px 0 #fff;
-
 	color: #000;
 
 }
@@ -517,28 +541,33 @@ font-weight: bold;
 }
 
 form {
+
 	font-size: 2em;
 
 }
 
 .top-box {
+
 	position: relative;
 	text-align: left;
 	width: 625px;
 
 }
+
 .top-box label {
+
 	text-align: left;
 
-
-
 }
+
 .form-input {
+
 	position: relative;
 
-
 }
-.form-input input{
+
+.form-input input {
+
 	margin: 5px 0;
 	padding: 0 5px;
 	width: 350px;
@@ -548,12 +577,14 @@ form {
 	font-size: 0.55em;
 }
 
-.form-options{
+.form-options {
+
 	margin-bottom: 10px;
 
 }
 
 .form-options input {
+
 	display: inline;
 	width: 80px;
 	height: 30px;
@@ -566,16 +597,14 @@ form {
 	margin-top: 10px;
 }
 
-
 [for="time"] {
 	float: left;
 	padding-right: 125px;
 
 }
 
-
-
 .loc-notice {
+
 	position: absolute;
 	top: 5px;
 	right: -320px;
@@ -586,6 +615,7 @@ form {
 }
 
 .map-case {
+
 	position: relative;
 	margin-top: 50px;
 	padding: 1em;
@@ -606,6 +636,7 @@ form {
 }
 
 #map_canvas {
+
 	float: left;
 	height: 250px;
 	width: 400px;
@@ -615,6 +646,7 @@ form {
 
 }
  #mapMarker {
+
 	padding: 0.1em;
 	border-radius: 10px;
 	font-size: 0.8em;
@@ -622,6 +654,7 @@ form {
 }
 
 #map-info {
+
 	width: 400px;
 	float: left;
 	padding: 1em;
@@ -629,15 +662,16 @@ form {
 }
 
 #map-info label {
+
 	margin-top: 10px;
 	color:#333;
 	text-shadow: 0 1px #dfdfdf;
-
 
 }
 
 
 #map-info h3 {
+
 	margin: 0;
 	padding: 0 0 10px;
 	color: #292929;
@@ -648,6 +682,7 @@ form {
 }
 
 #searchTextField {
+
 	display:block;
 	height: 30px;
 
@@ -656,6 +691,7 @@ form {
 
 
 #make-plans {
+
 	position: absolute;
 	width: 320px;
 	height: 75px;
@@ -688,16 +724,21 @@ form {
 }
 
 #datepicker {
+
 	margin-left: -20px;
 	padding: 0 5px;
 	width: 150px;
 
 
 }
-#start, #end{
+
+#start, #end {
+
 	padding: 0 5px;
 	width: 73px;
+
 }
+
 .good {
 
 	background-color: #ddf7d5;
@@ -708,8 +749,8 @@ form {
 	background-color:#f87963;
 }
 
+.bad-date:after {
 
-.bad-date:after{
 	display:inline-block;
 	position: absolute;
 	content:'Please double check you start and end time';
@@ -718,7 +759,6 @@ form {
 
 	font-size: 13px;
 	color: #000;
-
 
 }
 
@@ -732,8 +772,6 @@ form {
 	overflow-y: scroll;
 	border: none;
 
-
-
 }
 
 .calendarBody table {
@@ -742,22 +780,24 @@ form {
 	background-color: #dadada;
 	color: #000;
 
-
 }
 
-.calendarBody thead{
+.calendarBody thead {
+
 	font-size: 2em;
 
-
-
 }
+
 .calendarBody thead th {
+
 	padding-right: 0.5em;
 	font-size: 14px;
+
 }
 
 
 .calendarBody tbody td{
+
 	padding:1em;
 	font-size: 12px;
 	text-align:center;
@@ -788,13 +828,13 @@ thead tr th:nth-child(2n+1) {
 }
 
 .eventTable {
-	/*position:relative;*/
+
 	margin: 10px;
 
 }
 
 .eventTime {
-	/*position:relative;*/
+
 	margin: 0;
 	color: #000;
 	padding: 10px;
@@ -802,7 +842,6 @@ thead tr th:nth-child(2n+1) {
 	background-color: #fafafa;
 
 	box-shadow: inset 0 0 10px #f3f3f3;
-
 
 	border: 1px solid #aaa;
 
@@ -812,6 +851,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 .eventTime a {
+
 	position: relative;
 
 	display: block;
@@ -828,8 +868,6 @@ thead tr th:nth-child(2n+1) {
 	text-decoration: none;
 	text-shadow: 0 1px 0 #eee;
 	
-
-
 }
 
 .eventTime a:hover{
@@ -838,12 +876,6 @@ thead tr th:nth-child(2n+1) {
 	color: #000;
 }
 
-/*.eventTitle{
-	position: absolute;
-	top: 10px;
-	left: 30px;
-
-}*/
 
 .moreInfo {
 	position: absolute;
@@ -876,11 +908,13 @@ thead tr th:nth-child(2n+1) {
 
 
 .tableTime {
+
 	padding-right: 5px;
 
 }
 
 .notifications {
+
 	margin-top: 20px;
 	padding: 0.5em ;
 	background-color: #fff;
@@ -897,12 +931,14 @@ thead tr th:nth-child(2n+1) {
 }
 
 .notifications h3 {
+
 	margin: 0;
 	padding-left: 20px;
 
 }
 
 .notificationsList {
+
 	padding: 1em;
 	list-style: none;
 
@@ -923,6 +959,7 @@ thead tr th:nth-child(2n+1) {
 /******** event ****************/
 
 #panel-location, #panel-time, #panel-friends {
+
 	position: relative;
 	padding: 0;
 	margin: 0;
@@ -935,6 +972,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 #panel-location + div {
+
 	position: absolute;
 	padding: 0;
 	margin: 0;
@@ -948,33 +986,32 @@ thead tr th:nth-child(2n+1) {
 
 }
 
-
-
 .second {
+
 	margin:0 auto;
 	line-height: 2.5;
 
 }
 
 .small-text{
+
 	margin: 0;
 	padding: 0;
 
 }
 
 .small-text > p {
+
 	margin: 0;
 	line-height: 2;
 
 	text-align: center;
-
 	text-shadow: none;
 }
 
 
-
-
 #panel-time:before, #panel-location:before, #panel-friends:before {
+
 	position: absolute;
 	display: block;
 	content:'';
@@ -996,12 +1033,14 @@ thead tr th:nth-child(2n+1) {
 
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
 	background-position: -160px -39px;
+
 }
 
 #panel-friends:before {
 
 	background: url("../images/clips/icon-sprite.png") no-repeat left;
 	background-position: -155px -83px;
+
 }
 
 
@@ -1009,6 +1048,7 @@ thead tr th:nth-child(2n+1) {
 /************ FRIENDS *************************/
 
 .boxLeft {
+
 	float: left;
 	min-width: 480px;
 	min-height: 200px;
@@ -1018,6 +1058,7 @@ thead tr th:nth-child(2n+1) {
 
 
 .friendBody {
+
 	min-height: 400px;
 
 }
@@ -1028,9 +1069,11 @@ thead tr th:nth-child(2n+1) {
 	padding: 0;
 	padding-right: 40px;
 	list-style-type:none;
+
 }
 
 .friendsUl li {
+
 	padding: 10px; 
 
 }
@@ -1038,6 +1081,7 @@ thead tr th:nth-child(2n+1) {
 
 
 .boxRight {
+
 	float:left;
 	margin-left: 75px;
 	margin-top: 10px;
@@ -1046,6 +1090,7 @@ thead tr th:nth-child(2n+1) {
 
 
 .userCheck {
+
 	float: right;
 	padding: 1em;
 	margin-right: 15px;
@@ -1067,6 +1112,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 #addFriend{
+
 	position: relative;
 	padding: 0.5em 1em 1em;
 	height: 90px;
@@ -1086,31 +1132,36 @@ thead tr th:nth-child(2n+1) {
 	color:#000;
 	z-index: 100;
 
-
 }
 
 #addFriend label {
+
 	display: block;
-		font-size: 0.7em;
-		text-shadow: 0 1px  #eee;
+	font-size: 0.7em;
+	text-shadow: 0 1px  #eee;
 
 }
 
 #addFriend em {
+
 	display: block;
 	font-size: 0.5em;
 	text-shadow: none;
 
 	color: red;
+
 }
 #addEmail {
+
 	width: 250px;
 	height: 30px;
 
 	font-size: 0.55em;
+
 }
 
 #addBtn {
+
 	width: 55px;
 	height: 36px;
 	font-size: 0.55em;
@@ -1119,30 +1170,38 @@ thead tr th:nth-child(2n+1) {
 
 
 [data-status="unchecked"] {
+
 	display:none;
 
 }
 
 
 [data-status="available"] {
+
 	position: absolute;
 
 	left:-300px;
 	color: #090;
+
 }
 
 [data-status="available"]:after {
+
 	content:"✔";
 	margin-left: 10px;
+
 }
 
 [data-status="unavailable"] {
+
 	left: -300px;
 	position: absolute;
 	color: #f33;
+
 }
 
 .friendHolder{
+
 	position: relative;
 	z-index:100;
 	height: 40px;
@@ -1166,39 +1225,35 @@ thead tr th:nth-child(2n+1) {
 	border-radius: 10px;
 	font-size: 1.1em;
 
-		
-
-
 }
 
 .friendHolder div{
+
 	display:inline-block;
 	padding-right: 20px;
 	width: 50px;
 	height: 40px;
 	overflow:hidden;
 
-
 }
 
 .friendHolder div > img {
+
 	width: 100%;
-
-
 }
 
 
 .friendHolder span {
+
 	position: absolute;
 	line-height: 40px;
 
 	text-shadow: 0 1px 0 #eee;
 
-
-
 }
 
 .tips {
+
 	text-align: center;
 	font-size: 1.5em;
 	color: #222;
@@ -1209,15 +1264,13 @@ thead tr th:nth-child(2n+1) {
 	background-image:      -o-linear-gradient(top, #d9d9d9, #c0c0c0); /* Opera 11.10+ */
 	background-image:         linear-gradient(to bottom, #d9d9d9, #c0c0c0);
 
-
 	text-shadow: 0 1px #eee;
 
-	
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 
-
 }
+
 .tips p {
 
 	padding:0;
@@ -1225,6 +1278,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 .delete {
+
 	position: relative;
 	z-index: 10;
 	margin-top: -45px;
@@ -1237,6 +1291,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 .googleMapCanvas{
+
 	padding: 0 2em;
 	position: absolute;
 	top: 90px;
@@ -1246,6 +1301,7 @@ thead tr th:nth-child(2n+1) {
 }
 
 .googleMapCanvas:before{
+
 	position: absolute;
 	padding-left: 10px;
 	content:"Map";
@@ -1257,6 +1313,7 @@ thead tr th:nth-child(2n+1) {
 	background-color: #f4432a;
 	font-size: 2.2em;
 	line-height: 50px;
+
 }
 
 .mapMove{
@@ -1282,6 +1339,8 @@ thead tr th:nth-child(2n+1) {
 
 
 input::-webkit-input-placeholder, input:-moz-placeholder  {
-    color: #000;
+
+    color: #aaa;
+
 }
 

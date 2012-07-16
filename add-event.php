@@ -7,11 +7,12 @@ require_once 'includes/functions.inc.php';
 
 $errors = array();
 
-if (!user_is_signed_in()) {
+if ( !user_is_signed_in() ) {
+
 	header('Location: index.php');
 	exit;
-}
 
+}
 
 $user_id = ($_SESSION['user-id']);
 $user_name = ucFirst($_SESSION['username']);
@@ -24,37 +25,40 @@ $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_STRING);
 
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-	if (empty($title)) {
+	if ( empty($title) ) {
+
 		$errors['title'] = true;
+
 	}
 
-	if (empty($location)) {
+	if ( empty($location) ) {
+
 		$errors['location'] = true;
+
 	}
-/*
-	$event_check = check_event_exists( $db, );
 
+	if ( empty($errors) ) {
 
-	if() {
-
-
-	}*/
-
-
-	if (empty($errors)) {
-
+		//make location id
 		$location_id = make_event_location ($db, $location);
+
+		//make the event
 		$event_id = make_event($db, $location_id, $title, $event_from, $event_to, $event_date);
+
+		//make the event in the user_event table
 		make_user_event($db, $user_id, $event_id, $confirmed = 1);
 
+		//set this for calendar.php
 		$_SESSION['event_added'] = true;
+	
+		 if( !empty($who_with) ){
 
-		
-		 if(!empty($who_with)){
-
+		 	//if a friend was inputted add them	
 			$has_friends = friend_check( $db, $who_with );
+
+			//make the event
 		 	make_user_event($db, $has_friends, $event_id, $confirmed = 0);
 			
 		}
@@ -64,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
+//for img display purposes
 $user_info = get_username ($db, $user_id);
 
 include "html/add-event.html.php"

@@ -2,31 +2,34 @@ $(document).ready(function () {
 
 
 	$('#title').on('change', function (ev) {
+		
 		var eventTitle = $('#title').val();
 
-		if(eventTitle.length < 3 || eventTitle.length > 100) {
-			$('#title').addClass('error');
+		if( eventTitle.length < 3 || eventTitle.length > 100 ) {
+			
+			$(this).addClass('error');
 
+		} else {
 
-			}else {
-				$('#title').removeClass('error');
-			}
+			$(this).removeClass('error');
+		}
 
 	});
 
 
 
 	$('#datepicker').on('change', function (ev) {
-		var chosenDate = $('#datepicker').val();
+		var chosenDate = $('#datepicker').val(),
+			currentDate = new Date(getCurrentDate()),
+			eventDate = new Date(chosenDate),
 
-		var currentDate = new Date(getCurrentDate());
-		var eventDate = new Date(chosenDate);
+		if( currentDate > eventDate ){
 
-		if(currentDate > eventDate){
-			$('#datepicker').addClass('error');
+			$(this).addClass('error');
 
-		}else{
-			$('#datepicker').removeClass('error');
+		} else {
+
+			$(this).removeClass('error');
 		}
 
 
@@ -43,55 +46,54 @@ $(document).ready(function () {
 			startResult = parseInt(startTime),
 			endResult = parseInt(endTime);
 
-			console.log(endResult);
 
-		if (convertedStartTime == "pm") {
+		if ( convertedStartTime == "pm" ) {
+			
 			startResult +=12;
+
 		}
 
-		if (convertedEndTime == "pm"){
+		if ( convertedEndTime == "pm" ){
+			
 			endResult +=12;
+
 		}
 
-		if(startTime == "12:00pm" || startTime == "12:30pm" ){
+		if( startTime == "12:00pm" || startTime == "12:30pm" ){
 
 			startResult = "12";
 
 		}
 
-		console.log(endResult);
+		if( startResult >= endResult ) {
 
-		if(startResult >= endResult) {
 			formOptions.addClass('bad-date');
 
-		}else{
+		} else {
+
 			formOptions.removeClass('bad-date');
 
 		}
-
-		
 
 	});
 	
 
 	function getCurrentDate(){
 	   var d = new Date();
-	   var s = "";
+	   var string = "";
 
 	   if(d.getMonth() + 1 <10) {
 
-	  	 s += "0"+(d.getMonth() + 1) + "/";
+	  	 string += "0"+(d.getMonth() + 1) + "/";
 
 	  	} else {
 
-	  		s += (d.getMonth() + 1) + "/";
+	  		string += (d.getMonth() + 1) + "/";
 	  	}
-	   s += d.getDate() + "/";
-	   s += d.getFullYear();
-	   return(s);
+	   string += d.getDate() + "/";
+	   string += d.getFullYear();
+	   return(string);
 	}
-
-
 
 
 });

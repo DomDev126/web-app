@@ -4,57 +4,49 @@
 define('USER_IMAGE_PATH','images/user-images/');
 
 
-function image_resize_move ($file_tmp, $photo_name) {
-
+function image_resize_move ( $file_tmp, $photo_name ) {
 
 	 $filename = $photo_name;
 	 $uploadedfile =$file_tmp;
 	 $extension = strtolower(getExtension($filename));
 
-	if($extension=="jpg" || $extension=="jpeg" ) {
+	if( $extension=="jpg" || $extension=="jpeg" ) {
 
-		$src = imagecreatefromjpeg($uploadedfile);
+		$src = imagecreatefromjpeg( $uploadedfile );
 
-	} else if($extension=="png") {
+	} else if ( $extension=="png" ) {
 
-		$src = imagecreatefrompng($uploadedfile);
+		$src = imagecreatefrompng( $uploadedfile );
+
 	} else {
 
-		$src = imagecreatefromgif($uploadedfile);
+		$src = imagecreatefromgif( $uploadedfile );
 
 	}
 	 
-	list($width,$height)=getimagesize($uploadedfile);
+	list( $width,$height )=getimagesize( $uploadedfile );
 
 	$newwidth = 250;
-	$newheight = ($height/$width) * $newwidth;
-	$tmp  = imagecreatetruecolor($newwidth,$newheight);
+	$newheight = ( $height/$width ) * $newwidth;
+	$tmp  = imagecreatetruecolor( $newwidth,$newheight );
 
-	imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight, $width, $height);
+	imagecopyresampled( $tmp,$src,0,0,0,0,$newwidth,$newheight, $width, $height );
 
 	$max_height = 275;
 
-	if ($newheight > $max_height) {
-		$crop_top = (int)($newheight - $max_height) / 2;
-		$crop_tmp = imagecreatetruecolor($newwidth, $max_height);
-		imagecopy($crop_tmp, $tmp, 0, 0, 0, $crop_top, $newwidth, $max_height);
+	if ( $newheight > $max_height ) {
+		$crop_top = (int)( $newheight - $max_height ) / 2;
+		$crop_tmp = imagecreatetruecolor( $newwidth, $max_height );
+		imagecopy( $crop_tmp, $tmp, 0, 0, 0, $crop_top, $newwidth, $max_height );
 		$tmp = $crop_tmp;
 	}
 
 	$image_name = USER_IMAGE_PATH.$filename;
-
-
-
 	$my_img = imagejpeg($tmp, $image_name, 100);
-
-	var_dump($image_name);
-
-
 	move_uploaded_file($uploadedfile, $my_img); 
 
 	imagedestroy($src);
 	imagedestroy($tmp);
-
 
 }
 
@@ -62,7 +54,9 @@ function image_resize_move ($file_tmp, $photo_name) {
 function getExtension($str) {
 
     $i = strrpos($str,".");
-    if (!$i) { return ""; } 
+    if ( !$i ) { 
+    	return ""; 
+    } 
 
     $l = strlen($str) - $i;
     $ext = substr($str,$i+1,$l);
@@ -153,14 +147,10 @@ function check_schedule($db, $user_id) {
 				$week_array[4] = $todays_events[4];
 				
 			}
-		
-
 		}
 	}
+
 	return($week_array);
-
-	
-
 }
 
 
@@ -169,10 +159,8 @@ function create_table ($start, $interval, $event_array) {
 	$range = (24 - $start) * (60 / $interval);
 	$change_time = (12.5 - $start) * (60 / $interval);
 
-
 	$counter = 0;
 	$displayed_event_array = array();
-
 
 	for ($i = $start; $i <24; $i++){
   	//loop for hour
@@ -210,7 +198,6 @@ function display_schedule_events($time_seconds, $interval, $event_array, $displa
 
 	for ($k = 0; $k < 5; $k++) {
 
-      			
       			if($event_array_object->offsetExists($k)) {
 
 	      			$day_event_start = strtotime($event_array[$k][1]);
@@ -247,6 +234,7 @@ function display_schedule_events($time_seconds, $interval, $event_array, $displa
   		
       		}
 
-return $displayed_event_array; // pass the array back to update array in create_table
+	return $displayed_event_array; // pass the array back to update array in create_table
+
 }
 

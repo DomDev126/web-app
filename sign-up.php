@@ -11,57 +11,56 @@ $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password', FILTER_UNSAFE_RAW);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 
-
-
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	
 	$file_tmp = $_FILES['photo']['tmp_name'];
 
 
 	//check to make sure the name doesn't already exist
-	$name_check = friend_check($db, $username);
+	$name_check = friend_check( $db, $username );
 
+	if( $name_check ) {
 
-
-	if($name_check) {
 		$errors['user-exists'] = true;
+
 	}
 
-	if (empty($username)) {
-	$errors['username'] = true;
+	if ( empty($username) ) {
+
+		$errors['username'] = true;
+
 	}
 
-	if (empty($password)) {
-	$errors['password'] = true;
+	if ( empty($password) ) {
+
+		$errors['password'] = true;
+
 	}
 
-	if (empty($email)) {
-	$errors['email'] = true;
+	if ( empty($email) ) {
+
+		$errors['email'] = true;
+
 	}
 
-	
+	if ( empty($errors) ) {
 
-	if (empty($errors)) {
-
-		if ($_FILES['photo']['name'] == "") {
-			
+		if ( $_FILES['photo']['name'] == "" ) {
+			//if no pic set it to default pic
 			$photo_name = "nopic.jpg";
 
-		}else{
+		} else {
 
-			$photo_name = stripslashes($_FILES['photo']['name']);
+			$photo_name = stripslashes( $_FILES['photo']['name'] );
 
 		}
 		
 		// create the user
 		$id = user_create($db, $username, $password, $email, $photo_name);
 
-
 		//resize and move the screenshot to the images folder
 		image_resize_move($file_tmp, $photo_name);
 		
-
 		header('Location: index.php');
 		exit;
 

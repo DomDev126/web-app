@@ -3,7 +3,6 @@
 session_start();
 
 
-
 function get_hashed_password ($password) {
 	$rand = substr(strtr(base64_encode(openssl_random_pseudo_bytes(16)), '+', '.'), 0, 22);
 	$salt = '$2a$12$' . $rand;
