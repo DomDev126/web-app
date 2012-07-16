@@ -107,7 +107,7 @@ h2 {font-size: 2.25em;}
 	margin: 0;
 
 	width: 250px;
-	height: 1200px;
+	height: 1170px;
 
 	background: url("../images/bg/friends-bg.png");
 
@@ -756,7 +756,7 @@ form {
 }
 
 .error {
-	background-color:#ff2525;
+	background-color:#ffc0c0;
 }
 
 .bad-date:after {
@@ -764,7 +764,7 @@ form {
 	display:inline-block;
 	position: absolute;
 	content:'Please double check you start and end time';
-	top: 80px;
+	top: 67px;
 	right: -285px;
 
 	font-size: 13px;

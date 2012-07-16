@@ -58,7 +58,7 @@
 							</div>
 							<div class="form-input">
 									<label for="who-with">With who?: </label>
-									<input id="who-with" name="who-with" placeholder="Will (Optional)">
+									<input id="who-with" name="who-with" placeholder="Will (Optional) ">
 								</div>
 								<div class="form-input">
 									<label for="location">Location: </label>

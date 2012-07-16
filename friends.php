@@ -20,7 +20,7 @@ $user_info = get_username ($db, $user_id);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// to not display js too much.
-	$_SESSION['visited-friend-page'] = true;
+
 
 	preg_match('/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i', $raw_email, $matches);
 	$email = $matches[0];
@@ -60,5 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 include "html/friends.html.php";
+
 
 ?>

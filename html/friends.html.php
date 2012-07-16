@@ -76,6 +76,13 @@
 <link type="text/css" href="css/custom-theme/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
 <script src="js/tips.js"></script>
 
+<?php if(empty($_SESSION['visited-friend-page'])){
+	
+	echo '<script> var tipsInitialize = true </script>';
+}
+
+	$_SESSION['visited-friend-page'] = true;
+?>
 
 <body>
 </html>

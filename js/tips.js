@@ -1,18 +1,24 @@
 $(document).ready(function () {
-
-	var tips = $('.tips').hide();
-
-	tips.slideToggle('slow', function() {
-
-		setTimeout(slideUp, 3200)
-
-	})
+var tips = $('.tips').hide();
 	
-	function slideUp() {
+	if(tipsInitialize == true) {
+			
+		
 
-		tips.slideToggle('slow');
+		tips.slideToggle('slow', function() {
 
-	}
+			setTimeout(slideUp, 3200)
+
+		})
+		
+		function slideUp() {
+
+			tips.slideToggle('slow');
+
+		}
+
+	}	
+
 
 
 	var Users = {
