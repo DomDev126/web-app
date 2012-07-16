@@ -19,9 +19,10 @@ $(document).ready(function () {
 
 
 	$('#datepicker').on('change', function (ev) {
+		
 		var chosenDate = $('#datepicker').val(),
 			currentDate = new Date(getCurrentDate()),
-			eventDate = new Date(chosenDate),
+			eventDate = new Date(chosenDate);
 
 		if( currentDate > eventDate ){
 
@@ -31,7 +32,6 @@ $(document).ready(function () {
 
 			$(this).removeClass('error');
 		}
-
 
 	});
 

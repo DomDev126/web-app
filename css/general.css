@@ -352,6 +352,12 @@ form h2 {
 	border:none;
 }
 
+.go-button > button:active{
+
+	background-color: #fff;
+}
+
+
 .event-go > button {
 
 	width: 150px;
@@ -468,16 +474,8 @@ form h2 {
 
 }
 
-.contentHead p {
+.contentHead p, #confirm {
 
-	position: absolute;
-	padding: 0.5em;
-	margin-top: 9px;
-
-
-	height: 25px;
-	top: 0;
-	right: 20px;
 
 	background-color: #f5f6f7;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f6f7), to(#cfced4)); /* Saf4+, Chrome */
@@ -490,6 +488,19 @@ form h2 {
 	border-radius: 10px;
 
 	border: 1px solid #cfced4;
+
+}
+
+.contentHead p{
+
+	position: absolute;
+	padding: 0.5em;
+	margin-top: 9px;
+
+
+	height: 25px;
+	top: 0;
+	right: 20px;
 
 }
 
@@ -906,6 +917,12 @@ thead tr th:nth-child(2n+1) {
 
 }
 
+.moreInfo:hover, .moreInfo:active{
+
+	border: 1px solid #777;
+
+}
+
 
 .tableTime {
 
@@ -955,6 +972,25 @@ thead tr th:nth-child(2n+1) {
 
 }
 
+
+#confirm {
+	margin-left: 10px;
+	padding: 5px;
+
+	color: #333;
+
+	text-decoration: none;
+}
+
+#confirm:hover{
+	
+	border: 1px solid #444;
+}
+
+#confirm:active, #confirm:link, {
+
+	background-color:#d9d9d9;
+}
 
 /******** event ****************/
 

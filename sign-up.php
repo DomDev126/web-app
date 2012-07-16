@@ -58,8 +58,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		// create the user
 		$id = user_create($db, $username, $password, $email, $photo_name);
 
+		var_dump($id);
+
 		//resize and move the screenshot to the images folder
-		image_resize_move($file_tmp, $photo_name);
+		if($_FILES['photo']['name'] !== "" ) {
+
+			image_resize_move($file_tmp, $photo_name);
+		}
 		
 		header('Location: index.php');
 		exit;

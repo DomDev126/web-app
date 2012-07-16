@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="login-box clearfix">
 			<form  enctype="multipart/form-data" id="login" method="post" action="sign-up.php">
-				<input type="hidden" name="MAX_FILE_SIZE" value ="3247685">
+				<input type="hidden" name="MAX_FILE_SIZE" value ="324754124685">
 				<h2>Sign Up</h2>
 				<div class="panel">
 					<div class="panel-info">
