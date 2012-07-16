@@ -1,6 +1,8 @@
 $(document).ready(function () {
-	var userAvailable = $( '.user-available' );
-	var passwordReqs = 0;
+	var userAvailable = $( '.user-available' ),
+		passwordReqs = 0,
+		passwordPass = $( '.password-available' ),
+		emailPass = $( '.email-available' );
 
 	$( "#username" ).on( 'change', function (ev) {
 		
@@ -21,7 +23,7 @@ $(document).ready(function () {
 			
 				if(data == 'available') {
 
-					userAvailable.attr('data-status', 'available').html('available');
+					userAvailable.attr('data-status', 'available').html('Available');
 
 				} else {
 
@@ -39,6 +41,46 @@ $(document).ready(function () {
 		}
 
 	});
+
+
+	$('#password').on('change', function () {
+		var password = $(this).val();
+
+
+
+			if( password.length < 3) {
+				
+				passwordPass.attr( 'data-status', 'unavailable' ).html( 'Too small' );
+
+			 }else if ( password.length > 25 ) {
+
+			 	passwordPass.attr( 'data-status', 'unavailable' ).html( 'Too Large' );
+			 	 
+			 }else {
+
+			 	passwordPass.attr( 'data-status', 'available' ).html( 'Looks good' );
+
+			 };
+
+	});
+
+
+	$('#email').on('change', function () {
+		var email = $(this).val();
+
+		if ( email.length< 4 || email.length > 30 ) {
+
+			emailPass.attr( 'data-status', 'unavailable' ).html( 'Try again' );
+
+		} else {
+
+			emailPass.attr( 'data-status', 'available' ).html( 'Awesome' );
+
+		}
+	
+	});
+
+
 
 
 	$('form').on('submit', function (ev) {

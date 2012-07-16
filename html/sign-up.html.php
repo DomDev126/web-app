@@ -22,12 +22,14 @@
 					<div class="panel-info">
 						<label for="password">Password:</label>
 						<input id="password" name="password" type="password">
+						<strong class="password-available" data-status="unchecked">Looks Good</strong>
 					</div>
 				</div>
 				<div class="panel">
 					<div class="panel-info">
 						<label for="email">Email:</label>
 						<input id="email" type="email" name="email" >
+						<strong class="email-available" data-status="unchecked">Looks Good</strong>
 					</div>
 				</div>
 				<div class="panel">

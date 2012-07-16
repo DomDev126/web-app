@@ -1217,7 +1217,8 @@ thead tr th:nth-child(2n+1) {
 	position: absolute;
 
 	left:-300px;
-	color: #090;
+	color: #29FF42;
+	text-shadow: 1px 0 1px #000;
 
 }
 
@@ -1232,9 +1233,13 @@ thead tr th:nth-child(2n+1) {
 
 	left: -300px;
 	position: absolute;
-	color: #f33;
+	color: #FF0000;
+
+	text-shadow: 1px 0 1px #000;
 
 }
+
+
 
 .friendHolder{
 
