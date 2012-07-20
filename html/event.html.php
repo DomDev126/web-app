@@ -12,7 +12,7 @@
 	<div class="container">
 		
 		<div class="login-box clearfix">
-			<div class="googleMapCanvas"><div id="innerMap" style="width:317px; height:300px"></div></div>
+			<div class="googleMapCanvas"><div id="innerMap" style="width:317px; height:230px"></div></div>
 			<form id="login" method="post" action="<?php echo('event.php?id='.$event_id.'');?> ">
 				<h2>Plan</h2>
 				<div class="panel">

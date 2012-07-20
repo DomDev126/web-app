@@ -344,6 +344,7 @@ form h2 {
 				0 -1px 0 #bbb;
 }
 
+
 .go-button > button {
 
 	position: absolute;
@@ -404,7 +405,7 @@ form h2 {
 
 	text-decoration: none;
 	text-shadow: 0 1px 1px #fff;
-	font-size:0.8em;
+
 
 }
 
@@ -1337,7 +1338,7 @@ thead tr th:nth-child(2n+1) {
 
 	padding: 0 2em;
 	position: absolute;
-	top: 90px;
+	top: 85px;
 	left:-15px;
 
 
@@ -1350,7 +1351,7 @@ thead tr th:nth-child(2n+1) {
 	content:"Map";
 	height: 50px;
 	width: 100px;
-	top: 120px;
+	top: 100px;
 	left: -45px;
 	cursor: hand;
 	background-color: #f4432a;
