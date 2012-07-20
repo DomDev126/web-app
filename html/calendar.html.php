@@ -7,7 +7,7 @@
 	<link href="css/jquery.zweatherfeed.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">	
+	<div class="container clearfix">	
 		<p class="sign-out"><?php if (user_is_signed_in()) : ?>
 		<a href="sign-out.php">Sign Out</a></p>
 		<?php endif; ?>

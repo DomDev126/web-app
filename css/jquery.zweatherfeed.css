@@ -7,16 +7,9 @@
  *
  */
 
-body {
-	margin: 1em 3em;
-	font-family: Tahoma, Genevam, sans-serif;
-}
-
-form { margin-bottom: 1em; }
-
 #weather {
 	position: absolute;
-	right: -320px;
+	right: -295px;
 	top:-50px;
 
 }

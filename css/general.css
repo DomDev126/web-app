@@ -4,31 +4,34 @@ header, footer, nav, aside, article, section {display: block;}
 
 body {
 
-	margin: 0;padding: 0;
+	margin: 0 auto;
+	padding: 0;
 	background: #000 url('../images/bg/loginbg.jpg') no-repeat top fixed;
 	background-color #000;
 	font: normal 100%/1.5 arial, sans-serif;
 
+
+
+
 }
 
 .container {
-
 	margin: 0 auto;
 	padding: 0;
-	width: 1400px;
+	width: 1200px;
 }
 
-h1 {font-size: 2.5em;}
-h2 {font-size: 2.25em;}
+h1 {font-size: 2em;}
+h2 {font-size: 1.75em;}
 
 .panel {
 
 	position:relative;
-	height: 100px;
+	height: 80px;
 	width: 100%;
 
-	font-size: 2em;
-	line-height: 100px;
+	font-size: 1.7em;
+	line-height: 80px;
 
 	background-color: #aaa;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#aaa)); /* Saf4+, Chrome */
@@ -44,32 +47,31 @@ h2 {font-size: 2.25em;}
 
 
 .panel input {
-
-	margin: 1.3em 1em 1em;
-	float: right;
+	height: 40px;
 
 }
+
 .panel-info {
 
 	position: relative;
 	margin: 0 auto;
-	width: 90%;
+	width: 100%;
 }
 
 .sign-out {
 
 	margin: 0 ;
 	padding:3px 5px 3px 0;
-	width: 100%;
+	width: 18%;
 
-	background-color: #000;
+	background-color: #fff;
 	text-align: right;
 
 }
 
 .sign-out a {
 
-	color:#fff;
+	color:#000;
 }
 
 ::selection {
@@ -81,7 +83,7 @@ h2 {font-size: 2.25em;}
 /********** HEADER ***************/
 
 
-#imgWrap{
+#imgWrap {
 
 	width:88%;
 	height: 90%;
@@ -95,19 +97,19 @@ h2 {font-size: 2.25em;}
 }
 
 .content-container {
-
+	margin-left: 40px;
 	float: left;
-	width: 80%;
+	width: 68%;
 
-	padding-top: 50px;
+	padding-top: 10px;
 }
 
 .mainHead {
 
 	margin: 0;
 
-	width: 250px;
-	height: 1170px;
+	width: 225px;
+	min-height: 1000px;
 
 	background: url("../images/bg/friends-bg.png");
 
@@ -117,7 +119,7 @@ h2 {font-size: 2.25em;}
 
 	margin:0;
 	padding: 0;
-	height: 230px;
+	height: 4%;
 
 }
 
@@ -164,7 +166,7 @@ h2 {font-size: 2.25em;}
 .mainHead nav li {
 
 	margin: 0; 
-	padding: 1.5em;
+	padding: 1em;
 	position: relative;
 	
 	background-color: #f54020;
@@ -184,7 +186,7 @@ h2 {font-size: 2.25em;}
 	padding: 1em;
 	padding-left: 0.2em;
 	color: #fff;
-	font-size: 2.5em;
+	font-size: 2em;
 	text-decoration:none;
 
 	text-shadow: 0 1px 1px #dd2200,
@@ -252,11 +254,11 @@ h2 {font-size: 2.25em;}
 .login-box {
 
 	position: relative;
-	margin: 20% auto;
+	margin: 10% auto;
 	padding-bottom: 25px;
- 	width: 600px;
+ 	width: 500px;
 
- 	font-size: 0.6em;
+ 	font-size: 0.5em;
 
  	background-color: #272727;
  	border-radius: 10px;
@@ -297,9 +299,9 @@ form h2 {
  	position: absolute;
  	content:"";
  	display: inline-block;
- 	top: -5px;
- 	left: -8px;
- 	width:180px;
+ 	top: -4px;
+ 	left: -13px;
+ 	width:187px;
  	height: 10px;
  
  	padding: 0.1em 0.5em 0.1em 0.5em;
@@ -307,16 +309,20 @@ form h2 {
  	box-shadow: 5px ;
  	font-size: 0.6em;
  	background: transparent url('../images/clips/login-top.png') no-repeat top center;
- 	background-size: 196px;
+ 	background-size: 183px;
 
  }
 
+#login {
+	margin: 0;
+
+}
  .last {
 
-	font-size: 1.50em;
+	font-size: 1.65em;
 	text-align: center;
 
-	line-height: 1.5;
+	line-height: 1.3;
 
 	text-shadow: 0 1px 0 #d5d5d5,
 				0 -1px 0 #bbb;
@@ -324,14 +330,15 @@ form h2 {
 
 .panel-info > input {
 
-	width: 290px;
-	height: 35px;
+	width: 260px;
+	height: 25px;
 	padding: 2px 1px;
 	font-size: 0.6em;
 
 }
 
 .panel-info > label {
+	padding: 0.5em;
 
 	text-shadow: 0 1px 0 #d5d5d5,
 				0 -1px 0 #bbb;
@@ -447,7 +454,7 @@ form h2 {
 	position: relative;
 	margin: 0 auto;
 	width: 40%;
-	height: 60px;
+	height: 50px;
 	padding: 0;
 
 	-webkit-border-radius: 20px;
@@ -469,6 +476,7 @@ form h2 {
 
 	margin:0;
 	color:#000;
+	font-size: 2em;
 
 	text-shadow: 0 1px 1px #fff;
 
@@ -494,13 +502,13 @@ form h2 {
 .contentHead p{
 
 	position: absolute;
-	padding: 0.5em;
-	margin-top: 9px;
+	padding: 0.25em;
+	margin-top: 7px;
 
 
 	height: 25px;
 	top: 0;
-	right: 20px;
+	right: 10px;
 
 }
 
@@ -519,7 +527,7 @@ form h2 {
 	
 	margin: 0 auto;
 	margin-top: 80px;
-	width: 90%;
+	width: 100%;
 	padding: 1em;
 	
 	-webkit-border-radius: 10px;
@@ -553,7 +561,8 @@ form h2 {
 
 form {
 
-	font-size: 2em;
+	font-size: 1.75em;
+	width: 100%;
 
 }
 
@@ -561,13 +570,16 @@ form {
 
 	position: relative;
 	text-align: left;
-	width: 625px;
+	width: 575px;
 
 }
 
 .top-box label {
 
 	text-align: left;
+	display:inline-block;
+
+	width: 200px;
 
 }
 
@@ -581,45 +593,35 @@ form {
 
 	margin: 5px 0;
 	padding: 0 5px;
-	width: 350px;
+	width: 300px;
 	height: 30px;
-	float: right;
+
 
 	font-size: 0.55em;
 }
 
-.form-options {
+.form-input label {
+	display:inline-block;
 
-	margin-bottom: 10px;
-
-}
-
-.form-options input {
-
-	display: inline;
-	width: 80px;
-	height: 30px;
-	font-size: 0.55em;
-	line-height: 1.9;
+	width: 200px;
 
 }
+
+
+
 
 #location {
 	margin-top: 10px;
 }
 
-[for="time"] {
-	float: left;
-	padding-right: 125px;
 
-}
 
 .loc-notice {
 
 	position: absolute;
-	top: 5px;
-	right: -320px;
-	font-size: 0.4em;
+	top: 8px;
+	right: -190px;
+	font-size: 0.42em;
 	color: #f35944;
 
 	text-shadow: none;
@@ -650,7 +652,7 @@ form {
 
 	float: left;
 	height: 250px;
-	width: 400px;
+	width: 325px;
 	margin-top: 0.6em;
 	border: 15px solid #fff;
 	background-color: blue;
@@ -666,7 +668,7 @@ form {
 
 #map-info {
 
-	width: 400px;
+	width: 300px;
 	float: left;
 	padding: 1em;
 
@@ -686,7 +688,7 @@ form {
 	margin: 0;
 	padding: 0 0 10px;
 	color: #292929;
-	font-size: 1.6em;
+	font-size: 1.2em;
 
 	text-shadow: 0 1px 1px #fff;
 
@@ -696,6 +698,7 @@ form {
 
 	display:block;
 	height: 30px;
+	width: 350px;
 
 	font-size: 1.2em;
 }
@@ -704,8 +707,8 @@ form {
 #make-plans {
 
 	position: absolute;
-	width: 320px;
-	height: 75px;
+	width: 275px;
+	height: 60px;
 
 	bottom: 10px;
 	right:10px;
@@ -727,7 +730,7 @@ form {
 	border-radius: 10px;
 	cursor:pointer;
 
-	font-size: 2.5em;
+	font-size: 2em;
 	color: #fff;
 	text-shadow: 0 1px 1px #dd2200,
 				0 -1px 1px #dd472c;
@@ -736,9 +739,8 @@ form {
 
 #datepicker {
 
-	margin-left: -20px;
 	padding: 0 5px;
-	width: 150px;
+	width: 120px;
 
 
 }
@@ -746,7 +748,7 @@ form {
 #start, #end {
 
 	padding: 0 5px;
-	width: 73px;
+	width: 68px;
 
 }
 
@@ -778,7 +780,7 @@ form {
 
 .calendarBody {
 
-	height: 700px;
+	height: 500px;
 	overflow-y: scroll;
 	border: none;
 
@@ -794,22 +796,22 @@ form {
 
 .calendarBody thead {
 
-	font-size: 2em;
+	font-size: 1.25em;
 
 }
 
 .calendarBody thead th {
 
-	padding-right: 0.5em;
-	font-size: 14px;
+	padding-right: 0.25em;
+	font-size: 13px;
 
 }
 
 
 .calendarBody tbody td{
 
-	padding:1em;
-	font-size: 12px;
+	padding:0.25em;
+	font-size: 11px;
 	text-align:center;
 	
 }
@@ -938,7 +940,7 @@ thead tr th:nth-child(2n+1) {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 
-		text-shadow: 0 1px 1px #ddd,
+	text-shadow: 0 1px 1px #ddd,
 				 0 -1px 1px #fff;
 
 	background: url("../images/bg/friends-bg.png");
@@ -949,13 +951,15 @@ thead tr th:nth-child(2n+1) {
 .notifications h3 {
 
 	margin: 0;
+	padding: 0;
 	padding-left: 20px;
+	font-size
 
 }
 
 .notificationsList {
-
-	padding: 1em;
+	margin: 10px;
+	padding: 0.75em;
 	list-style: none;
 
 	background-color: #d9d9d9;
@@ -1085,7 +1089,7 @@ thead tr th:nth-child(2n+1) {
 .boxLeft {
 
 	float: left;
-	min-width: 480px;
+	min-width: 350px;
 	min-height: 200px;
 
 }
@@ -1118,7 +1122,6 @@ thead tr th:nth-child(2n+1) {
 .boxRight {
 
 	float:left;
-	margin-left: 75px;
 	margin-top: 10px;
 
 }
@@ -1149,7 +1152,7 @@ thead tr th:nth-child(2n+1) {
 #addFriend{
 
 	position: relative;
-	padding: 0.5em 1em 1em;
+	padding: 0.5em;
 	height: 90px;
 	background-color: #d9d9d9;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
@@ -1244,8 +1247,8 @@ thead tr th:nth-child(2n+1) {
 
 	position: relative;
 	z-index:100;
-	height: 40px;
-	width: 400px;
+	height: 30px;
+	width: 300px;
 	margin: 10px 10px 35px;
 
 
@@ -1263,7 +1266,7 @@ thead tr th:nth-child(2n+1) {
 	
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	font-size: 1.1em;
+	font-size: 0.9em;
 
 }
 
@@ -1272,21 +1275,21 @@ thead tr th:nth-child(2n+1) {
 	display:inline-block;
 	padding-right: 20px;
 	width: 50px;
-	height: 40px;
+	height: 30px;
 	overflow:hidden;
 
 }
 
 .friendHolder div > img {
 
-	width: 100%;
+	width: 90%;
 }
 
 
 .friendHolder span {
 
 	position: absolute;
-	line-height: 40px;
+	line-height: 30px;
 
 	text-shadow: 0 1px 0 #eee;
 
@@ -1298,7 +1301,7 @@ thead tr th:nth-child(2n+1) {
 	font-size: 1.5em;
 	color: #222;
 
-		background-color: #d9d9d9;
+	background-color: #d9d9d9;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
 	background-image: -webkit-linear-gradient(top, #d9d9d9, #c0c0c0); /* Chrome 10+, Saf5.1+, iOS 5+ */ background-image:    -moz-linear-gradient(top, #d9d9d9, #c0c0c0); /* FF3.6+ */
 	background-image:      -o-linear-gradient(top, #d9d9d9, #c0c0c0); /* Opera 11.10+ */

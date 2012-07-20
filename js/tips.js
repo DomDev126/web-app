@@ -1,10 +1,9 @@
 $(document).ready(function () {
 	
-
-
 	var Users = {
 
-		getUsers: function (config) {
+		getUsers: function ( config ) {
+	 		
 	 		self = Users;
 	 		this.config = config;
 	 		
@@ -32,13 +31,12 @@ $(document).ready(function () {
 
 	});
 
+// random tips 
 
 	var tips = $('.tips').hide();
 	
 	if(tipsInitialize == true) {
 			
-		
-
 		tips.slideToggle('slow', function() {
 
 			setTimeout(slideUp, 3200)

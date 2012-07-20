@@ -8,7 +8,7 @@ $(document).ready( function () {
 		var colNum = $(this).attr( 'rowspan' ),
 			aLink = $(this).find( 'a' ),
 			newHeight= 0;
-			(colNum > 3 ) ? newHeight = colNum * 40 : newHeight = colNum * 30
+			(colNum > 3 ) ? newHeight = colNum * 20 : newHeight = colNum * 15
 
 			aLink.css( 'height', newHeight+'px' );
 

@@ -49,9 +49,8 @@
 									<label for="title">Title: </label>
 									<input id="title" name="title" placeholder="Coffee Break">
 								</div>
-
-								<label for="time">Date/Title: </label>
-								<div class="form-options">
+								<div class="form-input">
+									<label for="time">Date/Title: </label>
 									<input type="text" id="datepicker" name="date" placeholder="date">
 									<input id="start" name="start" value=""  placeholder="7:30am">
 									<input id="end" name="end" value=""  placeholder="4:00pm">
@@ -63,14 +62,14 @@
 								<div class="form-input">
 									<label for="location">Location: </label>
 									<input id="location" name="location" placeholder="45 Lowertown Drive">
-									<p class="loc-notice">Already know the address? If not search below.</p>
+									<p class="loc-notice">Know the address? If not search below.</p>
 								</div>
 							</div>
 							<div class="map-case">
 								<div id="map_canvas"></div>
 								<div id="map-info">
 									<h3>What were you thinking?</h3>
-									<input id="searchTextField" type="text" size="50">
+									<input id="searchTextField" type="text">
 								    <input type="radio" class="radio" name="type" id="changetype-all" checked="checked">
 								    <label for="changetype-all">All</label>
 
