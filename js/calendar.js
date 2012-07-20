@@ -20,4 +20,10 @@ $(document).ready( function () {
 
 	});
 
+	$( '#innerMap' ).on('click', function (ev) {
+		
+		ev.stopPropagation();
+
+	});
+
 });
