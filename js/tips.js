@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 	});
 
-// random tips 
+// random tips that are displayed
 
 	var tips = $('.tips').hide();
 	
