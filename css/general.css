@@ -31,7 +31,7 @@ h2 {font-size: 1.75em;}
 	width: 100%;
 
 	font-size: 1.7em;
-	line-height: 80px;
+	line-height: 60px;
 
 	background-color: #aaa;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#aaa)); /* Saf4+, Chrome */
@@ -39,8 +39,8 @@ h2 {font-size: 1.75em;}
 	background-image:    -moz-linear-gradient(top, #bbb, #aaa); /* FF3.6+ */
 	background-image:      -o-linear-gradient(top, #bbb, #aaa); /* Opera 11.10+ */
 	background-image:         linear-gradient(to bottom, #bbb, #aaa);
-	border-bottom: 1px solid #999;
-	border-top: 1px solid #bbb;
+	border-bottom: 1px solid #888;
+	border-top: 1px solid #ccc;
 
 	z-index: 1000;
 }
@@ -74,10 +74,11 @@ h2 {font-size: 1.75em;}
 	color:#000;
 }
 
-::selection {
+::selection  {
 	text-shadow: none;
 	color: red;
 }
+
 
 
 /********** HEADER ***************/
@@ -322,7 +323,7 @@ form h2 {
 	font-size: 1.65em;
 	text-align: center;
 
-	line-height: 1.3;
+	line-height: 0.6;
 
 	text-shadow: 0 1px 0 #d5d5d5,
 				0 -1px 0 #bbb;
@@ -335,10 +336,27 @@ form h2 {
 	padding: 2px 1px;
 	font-size: 0.6em;
 
+	box-shadow: inset 0px 0px 3px #bbb;
+	background-color: #fcfcfc;
+
 }
 
+.panel-info > input:active, .panel-info > input:focus {
+
+	box-shadow: inset 0px 0px 5px #ddd;
+
+
+}
+
+
+
+
+
 .panel-info > label {
+	display: inline-block;
 	padding: 0.5em;
+	width: 150px;
+
 
 	text-shadow: 0 1px 0 #d5d5d5,
 				0 -1px 0 #bbb;
@@ -562,7 +580,7 @@ form h2 {
 
 form {
 
-	font-size: 1.75em;
+	font-size: 2.1em;
 	width: 100%;
 
 }
@@ -621,8 +639,8 @@ form {
 
 	position: absolute;
 	top: 8px;
-	right: -190px;
-	font-size: 0.42em;
+	right: -192px;
+	font-size: 0.38em;
 	color: #f35944;
 
 	text-shadow: none;
@@ -1029,13 +1047,14 @@ thead tr th:nth-child(2n+1) {
 .second {
 
 	margin:0 auto;
-	line-height: 2.5;
+	line-height: 3;
 
 }
 
 .small-text{
 
 	margin: 0;
+
 	padding: 0;
 
 }
@@ -1043,7 +1062,9 @@ thead tr th:nth-child(2n+1) {
 .small-text > p {
 
 	margin: 0;
+	margin-top: -10px;
 	line-height: 2;
+	font-size: 0.9em;
 
 	text-align: center;
 	text-shadow: none;
@@ -1057,7 +1078,8 @@ thead tr th:nth-child(2n+1) {
 	content:'';
 	height: 45px;
 	width: 45px;
-	top: 25px;
+	left: 30px;
+	top: 20px;
 
 }
 
@@ -1190,7 +1212,7 @@ thead tr th:nth-child(2n+1) {
 	color: red;
 
 }
-#addEmail {
+#addFriendInput {
 
 	width: 250px;
 	height: 30px;
@@ -1382,9 +1404,9 @@ thead tr th:nth-child(2n+1) {
 }
 
 
-input::-webkit-input-placeholder, input:-moz-placeholder  {
+-webkit-input-placeholder, input:-moz-placeholder  {
 
-    color: #aaa;
+    color: #ddd;
 
 }
 

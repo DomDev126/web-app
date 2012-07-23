@@ -58,7 +58,7 @@
 						<div class="boxRight">
 							<form id="addFriend" method="post" action="friends.php">
 								<label for="addFriend">Add one of your friends</label>
-								<input id="addEmail" name="addEmail" placeholder="ie. steve@partypooper.com" value="">
+								<input id="addFriendInput" name="addEmail" placeholder="ie. steve@partypooper.com" value="">
 								<button id="addBtn" type="submit">Add</button>
 								<?php if (isset($errors['no-user'])) { echo ('<em>No such user/email exists</em>');} ?>
 								
@@ -75,7 +75,6 @@
 <script src=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
 <link type="text/css" href="css/custom-theme/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
 <script src="js/tips.js"></script>
-
 <?php if(empty($_SESSION['visited-friend-page'])){
 	
 	echo '<script> var tipsInitialize = true </script>';
@@ -83,6 +82,5 @@
 
 	$_SESSION['visited-friend-page'] = true;
 ?>
-
 <body>
 </html>

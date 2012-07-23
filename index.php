@@ -24,8 +24,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	if ( empty($errors) ) {
 
-		var_dump($user_id);
-
 		$user_info = user_get($db, $username, $password);
 		$user_id = $user_info['id'];
 		$user_name = $user_info['username'];

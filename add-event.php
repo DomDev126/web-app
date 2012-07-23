@@ -41,30 +41,41 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	if ( empty($errors) ) {
 
-		//make location id
-		$location_id = make_event_location ($db, $location);
+		try {
 
-		//make the event
-		$event_id = make_event($db, $location_id, $title, $event_from, $event_to, $event_date);
-
-		//make the event in the user_event table
-		make_user_event($db, $user_id, $event_id, $confirmed = 1);
-
-		//set this for calendar.php
-		$_SESSION['event_added'] = true;
-	
-		 if( !empty($who_with) ){
-
-		 	//if a friend was inputted add them	
-			$has_friends = friend_check( $db, $who_with );
+			//make location id
+			$location_id = make_event_location ($db, $location);
 
 			//make the event
-		 	make_user_event($db, $has_friends, $event_id, $confirmed = 0);
-			
-		}
+			$event_id = make_event($db, $location_id, $title, $event_from, $event_to, $event_date);
 
-		header('Location: calendar.php');
-		exit;
+			//make the event in the user_event table
+			make_user_event($db, $user_id, $event_id, $confirmed = 1);
+
+		} catch (Exception $e ) {
+ 			
+			$_SESSION['db_error'] = $e;
+
+ 			header('Location: error-output.php');
+			exit;
+
+  		}
+
+			//set this for calendar.php
+			$_SESSION['event_added'] = true;
+		
+			 if( !empty($who_with) ){
+
+			 	//if a friend was inputted add them	
+				$has_friends = friend_check( $db, $who_with );
+
+				//make the event
+			 	make_user_event($db, $has_friends, $event_id, $confirmed = 0);
+				
+			}
+
+			header('Location: calendar.php');
+			exit;
 	}
 }
 

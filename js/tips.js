@@ -27,7 +27,7 @@ $(document).ready(function () {
 
 	Users.getUsers({
 
-		formInput: $('#addEmail')
+		formInput: $('#addFriendInput')
 
 	});
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 			
 		tips.slideToggle('slow', function() {
 
-			setTimeout(slideUp, 3200)
+			setTimeout(slideUp, 3400)
 
 		})
 		
