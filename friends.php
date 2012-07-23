@@ -19,25 +19,20 @@ $user_info = get_username ($db, $user_id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-
-	preg_match('/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i', $raw_email, $matches);
-	$email = $matches[0];
-
 	$errors = array();
 
-	if( isset($email) ) {
+
+	if($raw_email !== ''){
+		
+		preg_match('/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i', $raw_email, $matches);
+		
+		$email = $matches[0];
 
 		$friend_id =  friend_email_check($db, $email);
 
 	}
 
-	if( !$friend_id ){
-
-		$errors['no-user'] = true;
-
-	}
-
-	if( $friend_id ) {
+	if( isset($friend_id) ) {
 		
 		//check to see if they are already friends
 		$friendAlready = check_friend_id ($db, $user_id, $friend_id);
@@ -54,6 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			exit;
 	
 		}
+	} else {
+
+		$errors['no-user'] = true;
+
 	}
 }
 

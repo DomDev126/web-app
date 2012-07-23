@@ -3,12 +3,12 @@ $(document).ready(function () {
 	var Users = {
 
 		getUsers: function ( config ) {
-	 		
+
 	 		self = Users;
 	 		this.config = config;
 	 		
 		 	$.ajax({
-				url: "check-friends.php",
+				url: (config.requestType == "all-users") ? "check-friends.php?type=all-users" : "check-friends.php?type=friends"  ,
 				type: "POST",
 				dataType: "json",
 				data: self.config.formInput.serialize(),
@@ -27,7 +27,8 @@ $(document).ready(function () {
 
 	Users.getUsers({
 
-		formInput: $('#addFriendInput')
+		formInput: $('.formCheck'),
+		requestType: $('.formCheck').data('type')
 
 	});
 

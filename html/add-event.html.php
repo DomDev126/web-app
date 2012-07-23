@@ -57,7 +57,7 @@
 							</div>
 							<div class="form-input">
 									<label for="who-with">With who?: </label>
-									<input id="who-with" name="who-with" placeholder="Will (Optional) ">
+									<input class="formCheck" name="who-with" data-type="friends" placeholder="Will (Optional) ">
 								</div>
 								<div class="form-input">
 									<label for="location">Location: </label>
@@ -106,5 +106,8 @@
 		  });
 		</script>
 <script src="js/plan-validator.js"></script>
+<script src=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+<link type="text/css" href="css/custom-theme/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+<script src="js/tips.js"></script>
 <body>
 </html>

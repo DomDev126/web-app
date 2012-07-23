@@ -58,7 +58,7 @@
 						<div class="boxRight">
 							<form id="addFriend" method="post" action="friends.php">
 								<label for="addFriend">Add one of your friends</label>
-								<input id="addFriendInput" name="addEmail" placeholder="ie. steve@partypooper.com" value="">
+								<input id="addFriendInput"  class="formCheck" name="addEmail" data-type = "all-users" placeholder="ie. steve@partypooper.com" value="">
 								<button id="addBtn" type="submit">Add</button>
 								<?php if (isset($errors['no-user'])) { echo ('<em>No such user/email exists</em>');} ?>
 								
