@@ -49,7 +49,7 @@
 										$friend_info = get_username ($db, $current_friend);
 										$friend_email = get_friend_email ($db, $current_friend);
 										
-										echo '<li class="friendHolder"><div><img src="'.USER_IMAGE_PATH.$friend_info['photo'].'" alt=""></div><span>'.$friend_info['username'].'  (  '.$friend_email['email'].' )</span></li><a class="bottomLink delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
+										echo '<li class="friendHolder"><div><img src="'.USER_IMAGE_PATH.$friend_info['photo'].'" alt="Image of '.ucFirst($friend_info['username']).'"></div><span>'.ucfirst($friend_info['username']).'  (  '.$friend_email['email'].' )</span></li><a class="bottomLink delete" href="delete.php?id='.$current_friend.'">Delete</a> ';
 								 	}
 
 								 }; ?>

@@ -28,9 +28,10 @@ $event_date = get_event_date ( $db, $event_id ) ;
 
 //fix date to our liking
 $date = $event_date[0][2];
+
 $day = date("l", strtotime($date));
 $day_month = substr($date, 0, 5);
-$date_string = $day.' '.$day_month.' at '. $event_date[0][0];
+$date_string = $day.' '.$day_month.' at '. $event_date[0][1];
 
 
 //handle the confirmed click
