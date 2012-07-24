@@ -1177,7 +1177,7 @@ thead tr th:nth-child(2n+1) {
 #addFriend{
 
 	position: relative;
-	padding: 0.5em;
+	padding: 0.5em 0.5em 0.7em;
 	height: 90px;
 	background-color: #d9d9d9;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#c0c0c0)); /* Saf4+, Chrome */
@@ -1208,9 +1208,8 @@ thead tr th:nth-child(2n+1) {
 #addFriend em {
 
 	display: block;
-	font-size: 0.5em;
+	font-size: 0.4em;
 	text-shadow: none;
-
 	color: red;
 
 }
