@@ -7,7 +7,7 @@ body {
 	margin: 0 auto;
 	padding: 0;
 	background: #000 url('../images/bg/loginbg.jpg') no-repeat top fixed;
-	background-color #000;
+	background-color: #fff;
 	font: normal 100%/1.5 arial, sans-serif;
 
 
@@ -576,6 +576,13 @@ form h2 {
 
 	text-shadow: none
 
+}
+
+.calendarBody h4{
+
+	margin: 0;
+	font-size: 1.3em;
+	text-shadow: 0 1px 1px #fff;
 }
 
 form {
@@ -1271,7 +1278,7 @@ thead tr th:nth-child(2n+1) {
 
 
 
-.friendHolder{
+.friendHolder, .list-item-holder{
 
 	position: relative;
 	z-index:100;
@@ -1296,6 +1303,13 @@ thead tr th:nth-child(2n+1) {
 	border-radius: 10px;
 	font-size: 0.9em;
 
+}
+
+.list-item-holder {
+	padding: 0 20px;
+	margin: 10px 10px 20px;
+
+	height: 100px;
 }
 
 .friendHolder div{

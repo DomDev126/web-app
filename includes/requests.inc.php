@@ -256,6 +256,27 @@ function check_notification_confirmation($db, $event_id, $user_id) {
 
 }
 
+function check_all_events ($db, $user_id) {
+
+
+	$sql = $db->prepare('
+		SELECT 	events.id, events.event_title, events.event_from, events.event_to, events.event_date, locations.address
+			FROM events
+			INNER JOIN user_events ON user_events.event_id = events.id
+			INNER JOIN locations ON events.location_id = locations.id
+			WHERE user_events.user_id = :user_id
+			AND user_events.confirmed = 1
+
+			');
+
+	$sql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+	$sql->execute();
+	$results = $sql->fetchALL();
+
+
+	return $results;
+
+}
 
 function get_event_loc_title ($db, $event_id) {
 

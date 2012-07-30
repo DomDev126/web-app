@@ -34,8 +34,35 @@
 				</header>
 				
 				<div class="contentBody">
+					<form action="calendar.php" method="post">
+						<input type="hidden" name="list-post">
+						<button type="submit">List View</button>
+					</form>
+					<form action="calendar.php" method="post">
+						<input type="hidden" name="calendar-post">
+						<button type="submit">Calendar View</button>
+					</form>
+
+
 					<div class="calendarBody clearfix">
 						<table>
+					       <?php if(isset($_SESSION['list-view'])) :?>
+					       <h4>List View</h4>
+
+					       		<?php foreach ($list_view_events as $events) : ?>
+
+					       		
+						       		<p><?php echo($events['event_date']);?></p>
+						       		<div class="list-item-holder">
+						       		<p><?php echo (ucFirst($events['event_title'])); ?></p>
+									<p><?php echo($events['event_from'].' - '.$events['event_to'] ); ?></p>
+								</div>
+
+					       	<?php endforeach;?>
+
+
+					       <?php else :?>
+
 					        <thead>
 					          <tr>
 					            <th>Time:</th>
@@ -47,8 +74,15 @@
 					          </tr>
 					        </thead>
 					        <tbody>
-					        	<?php create_table (6, 30, $event_array);?> 
+					        	 <?php create_table (6, 30, $event_array);?> 
 					        </tbody>
+
+					          <?php endif;?>
+
+
+
+
+
 					    </table>  
 					</div>
 					 <div class="notifications">
