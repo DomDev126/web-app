@@ -585,6 +585,13 @@ form h2 {
 	text-shadow: 0 1px 1px #fff;
 }
 
+.contentBody > form {
+	display: inline-block;
+	float: left;
+
+	width: 30%;
+}
+
 form {
 
 	font-size: 2.1em;
@@ -811,6 +818,7 @@ form {
 	height: 500px;
 	overflow-y: scroll;
 	border: none;
+	clear:both;
 
 }
 

@@ -43,7 +43,6 @@
 						<button type="submit">Calendar View</button>
 					</form>
 
-
 					<div class="calendarBody clearfix">
 						<table>
 					       <?php if(isset($_SESSION['list-view'])) :?>
