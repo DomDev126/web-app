@@ -472,7 +472,7 @@ form h2 {
 
 	position: relative;
 	margin: 0 auto;
-	width: 40%;
+	width: 49%;
 	height: 50px;
 	padding: 0;
 
@@ -571,6 +571,54 @@ form h2 {
 
 }
 
+.contentBody > form {
+	display: inline-block;
+	float: left;
+
+	width: 7%;
+}
+
+#listViewBtn,#calendarViewBtn {
+	margin-left: 9px;
+	padding: 10px 20px;
+	text-indent: -999em;
+	border: 1px solid #dedede;
+
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright:5px;
+
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+
+
+
+
+} 
+
+#listViewBtn:active, #calendarViewBtn:active {
+
+	background-color: #ddd;
+	border: 1px solid #bbb;
+}
+
+
+#listViewBtn {
+
+	background: #eee url("../images/clips/icon-sprite.png") no-repeat left;
+	background-position: -40px -85px;
+
+}
+
+#calendarViewBtn{
+
+	background: #eee url("../images/clips/icon-sprite.png") no-repeat left;
+	background-position: 3px -85px;
+
+
+}
 
 .calendarBody{
 
@@ -585,12 +633,7 @@ form h2 {
 	text-shadow: 0 1px 1px #fff;
 }
 
-.contentBody > form {
-	display: inline-block;
-	float: left;
 
-	width: 30%;
-}
 
 form {
 

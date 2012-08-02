@@ -35,13 +35,14 @@
 				
 				<div class="contentBody">
 					<form action="calendar.php" method="post">
-						<input type="hidden" name="list-post">
-						<button type="submit">List View</button>
+						<input type="hidden" name="calendar-post">
+						<button id="calendarViewBtn" type="submit">Calendar View</button>
 					</form>
 					<form action="calendar.php" method="post">
-						<input type="hidden" name="calendar-post">
-						<button type="submit">Calendar View</button>
+						<input type="hidden" name="list-post">
+						<button id="listViewBtn" type="submit">List View</button>
 					</form>
+				
 
 					<div class="calendarBody clearfix">
 						<table>
@@ -58,7 +59,6 @@
 								</div>
 
 					       	<?php endforeach;?>
-
 
 					       <?php else :?>
 
@@ -77,10 +77,6 @@
 					        </tbody>
 
 					          <?php endif;?>
-
-
-
-
 
 					    </table>  
 					</div>
@@ -123,8 +119,6 @@
 				    			$friend_email = get_friend_email ($db, $friend[0]);
 
 				    		echo '<li>'.ucfirst($friend_info['username']).' : '.$friend_email['email'].' has indicated that you are a friend. <a id="confirm" href="confirm-friend.php?id='.$friend['user_id'].'">Confirm </a></li>';
-
-
 
 				    		}
 							
