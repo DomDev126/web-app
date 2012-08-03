@@ -42,23 +42,22 @@
 						<input type="hidden" name="list-post">
 						<button id="listViewBtn" type="submit">List View</button>
 					</form>
-				
-
 					<div class="calendarBody clearfix">
 						<table>
 					       <?php if(isset($_SESSION['list-view'])) :?>
-					       <h4>List View</h4>
-
 					       		<?php foreach ($list_view_events as $events) : ?>
 
 					       		
-						       		<p><?php echo($events['event_date']);?></p>
+						       		<p class="dateTitle"><?php $d = new DateTime($events['event_date']); echo $d->format(' l, F j, Y  '); ?></p>
 						       		<div class="list-item-holder">
-						       		<p><?php echo (ucFirst($events['event_title'])); ?></p>
-									<p><?php echo($events['event_from'].' - '.$events['event_to'] ); ?></p>
+						       		<p class="listInfo"><span>Title:</span> <?php echo (ucFirst($events['event_title'])); ?></p>
+									<p class="listInfo"><span>Time:</span> <?php echo($events['event_from'].' - '.$events['event_to'] ); ?></p>
+									<p class="listInfo"><span>Address:</span> <?php echo (ucFirst($events['address'])); ?></p>
+
 								</div>
 
 					       	<?php endforeach;?>
+
 
 					       <?php else :?>
 
