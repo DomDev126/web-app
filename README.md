@@ -5,7 +5,7 @@ Developing a fully functional web application.
 
 Check out an interactive prototype here. [I Have Plans](http://invis.io/WX4ADGS2)
 
- * * *
+* * *
 
 Functionality to Date
 =====================
@@ -21,6 +21,14 @@ Functionality to Date
 Functionality to be Added
 ========================
 
-- Deleted events notify other users of deletion
-- Fixing css/styles
-- Progressively enhancement using js
+- Fix small event bug
+- Deal with one event per day phenomenon
+
+ * * *
+
+Resources
+========================
+- Jquery
+- Jquery UI
+- zWeather Plugin
+- Google Maps api
