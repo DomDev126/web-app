@@ -1,9 +1,17 @@
 Web-app
 =======
 
-Developing a fully functional web application.
+Developing a fully functional calendar web application.
+
+Beta version available at [I Have Plans](http://ihaveplans.phpfog.com)
 
 Check out an interactive prototype here. [I Have Plans](http://invis.io/WX4ADGS2)
+
+Author Info
+===========
+Steven Dufresne
+Contact: steven@enserfud.ca
+Website: www.enserfud.ca
 
 * * *
 
@@ -16,7 +24,7 @@ Functionality to Date
 - Friends can be added and deleted
 - Users may check events and also delete events
 
- * * *
+* * *
 
 Functionality to be Added
 ========================
@@ -24,7 +32,7 @@ Functionality to be Added
 - Fix small event bug
 - Deal with one event per day phenomenon
 
- * * *
+* * *
 
 Resources
 ========================
