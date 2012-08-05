@@ -3,7 +3,7 @@ Web-app
 
 Developing a fully functional calendar web application.
 
-Beta version available at [I Have Plans](http://ihaveplans.phpfog.com)
+Beta version available at [PHPfog](http://ihaveplans.phpfog.com)
 
 Check out an interactive prototype here. [I Have Plans](http://invis.io/WX4ADGS2)
 
