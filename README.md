@@ -10,7 +10,9 @@ Check out an interactive prototype here. [I Have Plans](http://invis.io/WX4ADGS2
 Author Info
 ===========
 Steven Dufresne
+
 Contact: steven@enserfud.ca
+
 Website: www.enserfud.ca
 
 * * *
@@ -39,3 +41,12 @@ Resources
 - Jquery UI
 - zWeather Plugin
 - Google Maps api
+
+* * *
+
+Installation
+==================
+
+1. Clone Repository
+2. Install haveplans.sql
+3. Run through localHost
