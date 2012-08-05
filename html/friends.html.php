@@ -15,7 +15,7 @@
 			<header class="mainHead">
 				<figure>
 					<div id="imgWrap"><img src="<?php echo (USER_IMAGE_PATH.$user_info['photo']);?>" alt="User Photo"></div>
-					<figcaption>Welcome, <?php echo $user_info['username'];?></figcaption>
+					<figcaption>Welcome <?php echo ucFirst($user_info['username']);?></figcaption>
 				</figure>	
 				<nav>
 					<ul>

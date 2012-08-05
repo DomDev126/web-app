@@ -300,8 +300,8 @@ form h2 {
  	content:"";
  	display: inline-block;
  	top: -4px;
- 	left: -13px;
- 	width:187px;
+ 	left: -25px;
+ 	width:210px;
  	height: 10px;
  
  	padding: 0.1em 0.5em 0.1em 0.5em;
@@ -309,7 +309,7 @@ form h2 {
  	box-shadow: 5px ;
  	font-size: 0.6em;
  	background: transparent url('../images/clips/login-top.png') no-repeat top center;
- 	background-size: 183px;
+ 	background-size: 191px;
 
  }
 
@@ -612,8 +612,8 @@ form h2 {
 }
 
 #listViewBtn, #calendarViewBtn {
-
-	padding: 5px 20px 10px;
+	margin: 0;
+	padding: 5px 20px 20px;
 	border: 1px solid #dedede;
 
 	-moz-border-radius-topleft: 5px;
@@ -624,6 +624,8 @@ form h2 {
 
 	border-top-left-radius:5px;
 	border-top-right-radius:5px;
+
+	text-shadow: 0 1px #fff;
 
 
 } 
