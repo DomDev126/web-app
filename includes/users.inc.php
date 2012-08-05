@@ -1,3 +1,4 @@
+<?php
 /**
  * I Have Plans -- User check
  
@@ -6,7 +7,7 @@
  * @copyright 2012 Steven Dufresne
  * @license BSD-3-Clause <https://github.com/stevendufresne/web-app/BSD-3-CLAUSE-LICENSE.txt>
  */
-<?php
+
 
 session_start();
 

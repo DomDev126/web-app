@@ -1,11 +1,11 @@
-/**
+<!--
  * I Have Plans -- Add event html include
  
  * @author Steven Dufresne <steven@enserfud.ca>
  * @link http://github.com/StevenDufresne/web-app
  * @copyright 2012 Steven Dufresne
  * @license BSD-3-Clause <https://github.com/stevendufresne/web-app/BSD-3-CLAUSE-LICENSE.txt>
- */
+-->
 
 <!DOCTYPE html>
 <html>

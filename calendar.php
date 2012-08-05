@@ -1,11 +1,12 @@
-/**
+
+<!--
  * I Have Plans -- Calendar controller
  
  * @author Steven Dufresne <steven@enserfud.ca>
  * @link http://github.com/StevenDufresne/web-app
  * @copyright 2012 Steven Dufresne
  * @license BSD-3-Clause <https://github.com/stevendufresne/web-app/BSD-3-CLAUSE-LICENSE.txt>
- */
+-->
 <?php
 
 require_once 'includes/db.inc.php';

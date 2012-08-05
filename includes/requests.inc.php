@@ -1,3 +1,4 @@
+<?php
 /**
  * I Have Plans -- All db requests
   
@@ -6,7 +7,7 @@
  * @copyright 2012 Steven Dufresne
  * @license BSD-3-Clause <https://github.com/stevendufresne/web-app/BSD-3-CLAUSE-LICENSE.txt>
  */
-<?php
+
 
 
 function make_event($db, $location_id, $title, $event_from, $event_to, $event_date){
