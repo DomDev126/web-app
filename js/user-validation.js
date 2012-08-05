@@ -1,3 +1,12 @@
+/**
+ * I Have Plans -- User validation for sign-up
+ 
+ * @author Steven Dufresne <steven@enserfud.ca>
+ * @link http://github.com/StevenDufresne/web-app
+ * @copyright 2012 Steven Dufresne
+ * @license BSD-3-Clause <https://github.com/stevendufresne/web-app/BSD-3-CLAUSE-LICENSE.txt>
+ */
+
 $(document).ready(function () {
 	var userAvailable = $( '.user-available' ),
 		passwordReqs = 0,
