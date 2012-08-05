@@ -24,7 +24,6 @@ Functionality to Date
 - Friends can be added and deleted
 - Users may check events and also delete events
 
-* * *
 
 Functionality to be Added
 ========================
