@@ -34,8 +34,33 @@
 				</header>
 				
 				<div class="contentBody">
+					<form action="calendar.php" method="post">
+						<input type="hidden" name="calendar-post">
+						<button id="calendarViewBtn" type="submit">Calendar View</button>
+					</form>
+					<form action="calendar.php" method="post">
+						<input type="hidden" name="list-post">
+						<button id="listViewBtn" type="submit">List View</button>
+					</form>
 					<div class="calendarBody clearfix">
 						<table>
+					       <?php if(isset($_SESSION['list-view'])) :?>
+					       		<?php foreach ($list_view_events as $events) : ?>
+
+					       		
+						       		<p class="dateTitle"><?php $d = new DateTime($events['event_date']); echo $d->format(' l, F j, Y  '); ?></p>
+						       		<div class="list-item-holder">
+						       		<p class="listInfo"><span>Title:</span> <?php echo (ucFirst($events['event_title'])); ?></p>
+									<p class="listInfo"><span>Time:</span> <?php echo($events['event_from'].' - '.$events['event_to'] ); ?></p>
+									<p class="listInfo"><span>Address:</span> <?php echo (ucFirst($events['address'])); ?></p>
+
+								</div>
+
+					       	<?php endforeach;?>
+
+
+					       <?php else :?>
+
 					        <thead>
 					          <tr>
 					            <th>Time:</th>
@@ -47,8 +72,11 @@
 					          </tr>
 					        </thead>
 					        <tbody>
-					        	<?php create_table (6, 30, $event_array);?> 
+					        	 <?php create_table (6, 30, $event_array);?> 
 					        </tbody>
+
+					          <?php endif;?>
+
 					    </table>  
 					</div>
 					 <div class="notifications">
@@ -90,8 +118,6 @@
 				    			$friend_email = get_friend_email ($db, $friend[0]);
 
 				    		echo '<li>'.ucfirst($friend_info['username']).' : '.$friend_email['email'].' has indicated that you are a friend. <a id="confirm" href="confirm-friend.php?id='.$friend['user_id'].'">Confirm </a></li>';
-
-
 
 				    		}
 							

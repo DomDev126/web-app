@@ -7,7 +7,6 @@ body {
 	margin: 0 auto;
 	padding: 0;
 	background: #000 url('../images/bg/loginbg.jpg') no-repeat top fixed;
-	background-color #000;
 	font: normal 100%/1.5 arial, sans-serif;
 
 
@@ -472,7 +471,7 @@ form h2 {
 
 	position: relative;
 	margin: 0 auto;
-	width: 40%;
+	width: 49%;
 	height: 50px;
 	padding: 0;
 
@@ -558,7 +557,7 @@ form h2 {
 
 .eventBody, .friendBody, .calendarBody {
 
-	padding: 1.5em;
+	padding: 1.25em;
 	
 	background: url("../images/bg/friends-bg.png");
 
@@ -571,12 +570,93 @@ form h2 {
 
 }
 
+.dateTitle{
+	display: inline-block;
+	padding:2px 5px;
+	margin: 0;
+	margin-left: 20px;
+
+	background: #e8e8e8;
+	background: -moz-linear-gradient(top,  #e8e8e8 1%, #ffffff 99%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#e8e8e8), color-stop(99%,#ffffff));
+	background: -webkit-linear-gradient(top,  #e8e8e8 1%,#ffffff 99%);
+	background: -o-linear-gradient(top,  #e8e8e8 1%,#ffffff 99%);
+	background: -ms-linear-gradient(top,  #e8e8e8 1%,#ffffff 99%);
+	background: linear-gradient(to bottom,  #e8e8e8 1%,#ffffff 99%);
+
+	
+
+	border: 1px solid #fff;
+
+
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+
+	text-shadow: 0 1px 0 #fff;
+
+	box-shadow: 0 -1px 2px #888;
+
+
+}
+
+
+.contentBody > form {
+	display: inline-block;
+	float: left;
+	width: 150px;
+
+}
+
+#listViewBtn, #calendarViewBtn {
+
+	padding: 5px 20px 10px;
+	border: 1px solid #dedede;
+
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright:5px;
+
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+
+
+} 
+
+#calendarViewBtn{
+		margin-left: 15px;
+}
+
+#listViewBtn:active, #calendarViewBtn:active {
+
+	background-color: #ddd;
+	border: 1px solid #bbb;
+}
+
 
 .calendarBody{
 
 	text-shadow: none
 
 }
+
+.listInfo {
+	margin:0;
+}
+
+.calendarBody h4{
+
+	margin: 0 0 16px 0;
+	font-size: 1.3em;
+	text-shadow: 0 1px 1px #fff;
+}
+
+
 
 form {
 
@@ -804,6 +884,7 @@ form {
 	height: 500px;
 	overflow-y: scroll;
 	border: none;
+	clear:both;
 
 }
 
@@ -1270,7 +1351,7 @@ thead tr th:nth-child(2n+1) {
 
 
 
-.friendHolder{
+.friendHolder, .list-item-holder{
 
 	position: relative;
 	z-index:100;
@@ -1296,6 +1377,26 @@ thead tr th:nth-child(2n+1) {
 	font-size: 0.9em;
 
 }
+
+.list-item-holder {
+	padding: 20px;
+	margin: 0 10px 20px;
+
+	height: 70px;
+}
+
+.list-item-holder p {
+
+	text-shadow: 0 1px #eee;
+
+}
+
+.list-item-holder span{
+
+	font-size: 1.025em;
+}
+
+
 
 .friendHolder div{
 
