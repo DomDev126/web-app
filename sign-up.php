@@ -81,6 +81,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 }
 
-include "html/sign-up.html.php";
+include "views/sign-up.html.php";
 
 ?>

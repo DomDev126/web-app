@@ -56,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	exit;
 }
 
-include "html/event.html.php";
+include "views/event.html.php";
 
 ?>

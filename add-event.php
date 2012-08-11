@@ -92,6 +92,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 //for img display purposes
 $user_info = get_username ($db, $user_id);
 
-include "html/add-event.html.php"
+include "views/add-event.html.php"
 
 ?>

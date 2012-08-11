@@ -50,7 +50,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 }
 
-include "html/login.html.php"
+include "views/login.html.php"
 
 
 ?>

@@ -613,7 +613,7 @@ form h2 {
 
 #listViewBtn, #calendarViewBtn {
 	margin: 0;
-	padding: 5px 20px 20px;
+	padding: 5px 20px 8px;
 	border: 1px solid #dedede;
 
 	-moz-border-radius-topleft: 5px;
@@ -1106,11 +1106,13 @@ thead tr th:nth-child(2n+1) {
 	position: relative;
 	padding: 0;
 	margin: 0;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	text-align: center;
 
 	text-shadow: 0 1px 0 #dedede,
 				0 -1px 0 #bbb;
+
+	line-height: 3;
 
 }
 
@@ -1132,8 +1134,7 @@ thead tr th:nth-child(2n+1) {
 .second {
 
 	margin:0 auto;
-	line-height: 3;
-
+	line-height: 4;
 }
 
 .small-text{
@@ -1147,9 +1148,9 @@ thead tr th:nth-child(2n+1) {
 .small-text > p {
 
 	margin: 0;
-	margin-top: -10px;
+	margin-top: -8px;
 	line-height: 2;
-	font-size: 0.9em;
+	font-size: 0.8em;
 
 	text-align: center;
 	text-shadow: none;

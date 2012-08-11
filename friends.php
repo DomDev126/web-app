@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
-include "html/friends.html.php";
+include "views/friends.html.php";
 
 
 ?>
